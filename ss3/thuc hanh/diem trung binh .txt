@@ -1,0 +1,8 @@
+Begin 
+  Input toan= 7
+            ly = 6 
+            hoa = 8 
+  Averge = (toan + ly + hoa) / 3 
+  Display Averge
+End
+   

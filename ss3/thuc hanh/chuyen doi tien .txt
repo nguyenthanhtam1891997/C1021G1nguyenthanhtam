@@ -1,0 +1,7 @@
+Begin 
+  Input nhap tien = 50$
+     chuyen doi = nhap tien * 23000
+   Display chuyen doi
+  
+End
+   

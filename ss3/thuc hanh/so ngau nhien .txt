@@ -1,0 +1,10 @@
+Begin
+  N la 
+  Nhap vap M
+
+	
+  IF (N==M)
+	Display "du doan dung "
+  ELSE
+	Display "du doan sai"
+End

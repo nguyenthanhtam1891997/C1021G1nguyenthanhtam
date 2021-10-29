@@ -1,0 +1,12 @@
+Begin 
+  Input a  
+            b 
+            c 
+     If a>b And a>c
+      Display "a lon nhat"
+      If b>c
+       Display "b lon nhat"
+      Else 
+        Display "c lon nhat"
+  End
+   
