@@ -1,0 +1,17 @@
+BEGIN
+	INPUT DIEM 
+	IF DIEM => 75
+		DISPLAY "Loại A"
+		ELSE IF DIEM => 60
+			DISPLAY " Loại B"
+			ELSE IF DIEM => 45 
+				DISPLAY " Loại C"
+				ELSE IF DIEM => 35
+					DISPLAY " Loại D"
+				ELSE 
+					DISPLAY " Loại E"
+				END IF
+			END IF
+		END IF
+	END IF	
+END

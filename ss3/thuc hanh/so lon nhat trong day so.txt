@@ -1,0 +1,21 @@
+BEGIN
+    INPUT N
+    i = 1;
+    WHILE i <= n
+        DO
+        INPUT ai
+        i = i + 1
+        END DO
+    max = a1
+    IF i >= N
+    DISPLAY max
+    END IF
+    WHILE i <= N
+        DO
+        IF ai > max
+        max = ai
+        END IF
+        i = i + 1
+        END DO
+    DISPLAY MAX
+END
