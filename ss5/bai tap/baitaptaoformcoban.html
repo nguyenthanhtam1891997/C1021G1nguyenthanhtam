@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai tap tao form co ban</title>
+</head>
+<style>
+    h1 {
+        text-align: center;
+        color: white;
+    }
+    th {
+        text-align: right;
+        color: blue;
+        vertical-align: top;
+    }
+    td {
+        text-align: left;
+        color: red;
+    }
+</style>
+<body>
+<form method="get" action="baitaptaoformcoban.html">
+    <table>
+        <tr style="background-color:orange ">
+            <th colspan="4"><h1>SỞ THÍCH CỦA BẠN</h1></th>
+
+        </tr>
+        <tr>
+            <th>Họ và tên</th>
+            <td colspan="3"><input type="text" name="họ và tên" placeholder="Họ Và Tên"></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td colspan="3"><input type="text" name="email" placeholder="Email"></td>
+        </tr>
+        <tr>
+            <th rowspan="4">SỞ THÍCH</th>
+            <td><input type="checkbox" />thể thao </td>
+            <td><input type="checkbox" />Âm nhạc </td>
+            <td><input type="checkbox" />Đọc sách </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" />Lướt web </td>
+            <td><input type="checkbox" />Chơi game </td>
+            <td><input type="checkbox" />Điện ảnh  </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" />Du lịch </td>
+
+        </tr>
+        <tr>
+            <td><input type="reset" value="Reset"></td>
+            <td><input type="submit" value="Sen data"></td>
+        </tr>
+
+    </table>
+</form>
+</body>
+</html>

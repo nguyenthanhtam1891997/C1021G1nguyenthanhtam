@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Baitaptaoformdangkyhocvien</title>
+</head>
+    <style>
+        h1 {
+            text-align: left;
+            background-color: cadetblue;
+            color: blue;
+        }
+        th {
+            text-align: left;
+            color: blue;
+            vertical-align: top;
+        }
+
+    </style>
+<body>
+    <h1>ĐĂNG KÝ HỌC VIÊN</h1>
+    <form method="post" action="baitaptaoformdangkyhocvien.html">
+        <table>
+            <tr>
+                <th>Họ và tên</th>
+                <td colspan="3"><input type="text" name="họ và tên" placeholder="Họ Và Tên"></td>
+            </tr>
+            <tr>
+                <th>Ngày sinh</th>
+                <td colspan="3"><input type="date" name="dayofbirth" ></td>
+            </tr>
+            <tr>
+                <th>Giới tính</th>
+                <td><input type="radio" name="gender" value="Nam" >Nam</td>
+                <td><input type="radio" name="gender" value="Nu" >Nữ</td>
+            </tr>
+            <tr>
+                <th>Địa chỉ</th>
+                <td colspan="3"><textarea rows="5" cols="25" name="Diachi"></textarea></td>
+            </tr>
+            <tr>
+                <th>Lớp</th>
+                <td colspan="2">
+                    <select name="city" style="width: 70px">
+                        <option value="l1">Lớp 1</option>
+                        <option value="l2">Lớp 2</option>
+                        <option value="l3">Lớp 3</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td colspan="3"><input type="text" name="email" placeholder="Email"></td>
+            </tr>
+            <tr>
+                <th rowspan="2">Điện thoại</th>
+                <td colspan="3"><input type="text" name="number" placeholder="Number"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Xác nhận"></td>
+                <td><input type="reset" value="Khôi phục"></td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+</html>
