@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chuyendoitien</title>
+</head>
+<body>
+    <form method="get" action="chuyendoitien.html">
+        <table border="1">
+            <tr>
+                <th><h3>Amount</h3></th>
+                <th></th>
+                <th><h3>From Curency</h3></th>
+                <th></th>
+                <th><h3>To Currency</h3></th>
+            </tr>
+            <tr>
+                <td><input type="text" id="nhapsovao"></td>
+                <td></td>
+                <td><select id="fromHTML">
+                    <option value="vnd">Việt nam dong</option>
+                    <option value="usa">Mỹ</option>
+                </select></td>
+                <td></td>
+                <td><select id="to">
+                    <option value="usd">USD</option>
+                    <option value="vnd">Việt Nam Đồng</option>
+                </select> </td>
+                <td><button type="button" onclick="doi()">Convert</button> </td>
+            </tr>
+            <tr>
+                <td colspan="5" id="totol">totol :</td>
+            </tr>
+        </table>
+    </form>
+<script>
+    function doi() {
+        let nhapvao = document.getElementById("nhapsovao").value
+        let fromHTML = document.getElementById("fromHTML").value;
+        let tienviet= nhapvao * 23000;
+        let tiendo = nhapvao/23000;
+        if(from == "vnd"&& to == "usd"){
+            document.getElementById("totol").innerHTML+= tiendo;
+        }
+
+
+    }
+</script>
+</body>
+</html>
