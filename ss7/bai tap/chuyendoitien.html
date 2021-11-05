@@ -15,34 +15,47 @@
                 <th><h3>To Currency</h3></th>
             </tr>
             <tr>
-                <td><input type="text" id="nhapsovao"></td>
+                <td><input type="text" id="dauvao"></td>
                 <td></td>
-                <td><select id="fromHTML">
-                    <option value="vnd">Việt nam dong</option>
+                <td><select id="select1">
+                    <option value="vn">Việt nam dong</option>
                     <option value="usa">Mỹ</option>
                 </select></td>
                 <td></td>
-                <td><select id="to">
-                    <option value="usd">USD</option>
-                    <option value="vnd">Việt Nam Đồng</option>
+                <td><select id="select2">
+                    <option value="usa">USD</option>
+                    <option value="vn">Việt Nam Đồng</option>
                 </select> </td>
                 <td><button type="button" onclick="doi()">Convert</button> </td>
             </tr>
             <tr>
-                <td colspan="5" id="totol">totol :</td>
+                <td colspan="5" id="ra">tienchuyendoila:</td>
             </tr>
         </table>
     </form>
 <script>
     function doi() {
-        let nhapvao = document.getElementById("nhapsovao").value
-        let fromHTML = document.getElementById("fromHTML").value;
-        let tienviet= nhapvao * 23000;
-        let tiendo = nhapvao/23000;
-        if(from == "vnd"&& to == "usd"){
-            document.getElementById("totol").innerHTML+= tiendo;
+        let giatrivao = document.getElementById("dauvao").value;
+        let select1 = document.getElementById('select1').value;
+        let select2 = document.getElementById('select2').value;
+        let rausd = giatrivao / 23000;
+        let ravnd = giatrivao * 23000;
+        if(select1 == 'vn' && select2 =='usa' ){
+        document.getElementById("ra").innerHTML += rausd;
+        alert(rausd);
         }
-
+        if(select1 == 'usa' && select2 =='vn' ){
+            document.getElementById("ra").innerHTML += ravnd;
+            alert(ravnd);
+        }
+        if(select1 == 'vn' && select2 =='vn' ){
+            document.getElementById("ra").innerHTML += giatrivao;
+            alert(giatrivao);
+        }
+        if(select1 == 'usa' && select2 =='usa' ){
+            document.getElementById("ra").innerHTML += giatrivao;
+            alert(giatrivao);
+        }
 
     }
 </script>

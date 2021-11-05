@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="eLi">
+        <input type="text" id="cAt">
+        <table>
+            <td><button type="button" onclick="tinh_toan(this.value)" value="cong">Addition(+)</button></td>
+            <td><button type="button" onclick="tinh_toan(this.value)" value="tru">Subtraction(-)</button></td>
+            <td><button type="button" onclick="tinh_toan(this.value)" value="nhan">Multiplication(*)</button></td>
+            <td><button type="button" onclick="tinh_toan(this.value)" value="chia">Division(/)</button></td>
+        </table>
+    </form>
+    <p id="rEsul">result</p>
+    <script>
+        function tinh_toan (operator) {
+
+
+        let a1 = document.getElementById("eLi").value;
+        let a2 = document.getElementById("cAt").value;
+        let result ;
+         switch (operator) {
+                case "cong":
+                    result = parseInt(a1) + parseInt(a2);
+                    document.getElementById('rEsul').innerHTML = result;
+                    alert(result);
+                 break;
+                case "tru" :
+                     result = parseInt(a1) - parseInt(a2);
+                     document.getElementById('rEsul').innerHTML = result;
+
+                 break;
+                case 'nhan':
+                    result = parseInt(a1) * parseInt(a2);
+                    document.getElementById('rEsul').innerHTML = result;
+                 break;
+                case 'chia':
+                    result = parseInt(a1) / parseInt(a2);
+                    document.getElementById('rEsul').innerHTML = result;
+                 break;
+         }
+
+        }
+    </script>
+</body>
+</html>
