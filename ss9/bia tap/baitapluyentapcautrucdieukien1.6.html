@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // trên 100000000 được 10%
+    // trên 80000000 đuọc 8%
+    // tren 50000000 đuọc 3%
+    let a = parseInt(prompt('nhập doanh số bán hàng '));
+    if (a>=100000000){
+       let b = a*0.1
+        alert('hoa hông nhận đuoc'+b)
+    }else if(a>=80000000){
+        let b= a*0.08;
+        alert('hoa hòng nhận đuọc'+b)
+    }else if(a>=50000000){
+        let b = a*0.03;
+        alert('hoa hòng nhận đuọc'+b)
+    }else {
+        alert('chưa du dieu kien nhạn hoa hong')
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseFloat(prompt('nhập số tiền hằng tháng '))
+    let b = parseFloat('');
+    if (0<a&&a<=5){
+        b=0.05*a
+    }if(5<a&&a<=10){
+        b = (10/100)*a-0.25
+    }if (10<a&&a<=18){
+        b = (15/100)*a-0.75
+    }if(18<a&&a<=32){
+        b = (20/100)*a-1.65
+    }if (32<a&&a<=52){
+        b = (25/100)*a-3.25
+    }if (52<a&&a<=80){
+        b= (30/100)*a-5.85
+    }if (80<a){
+        b = (35/100)*a-9.85
+    }
+    alert('thuế phai nôp '+b);
+</script>
+</body>
+</html>

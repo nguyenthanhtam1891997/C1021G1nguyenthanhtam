@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let a = parseFloat(prompt('nhập điểm kiểm tra'));
+        let b = parseFloat(prompt('nhập diểm giữa kì'));
+        let c = parseFloat(prompt('nhập điểm cuối kì'));
+        let avegare = (a+(b*2)+(c*3))/6;
+        if( avegare >= 8 ){
+            document.write('học lực giỏi')
+        }else if(avegare >=5){
+            document.write('học lực khá ')
+        }else if(avegare >= 3.5){
+            document.write('học lực trung bình')
+        }else {
+            document.write('học lực yếu')
+        }
+    </script>
+</body>
+</html>

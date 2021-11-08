@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseFloat(prompt('nhập a'))
+    let b = parseFloat(prompt('nhập b'))
+    let c = parseFloat(prompt('nhập c'))
+    let d = b*b-4*a*c;
+    if(d < 0){
+        alert('phương trình vô nghiệm')
+    }else if( d == 0){
+        let x1=x2= -b/2*a;
+    }else if(d > 0){
+        x1 =(-b-Math.sqrt(d))/2*a;
+        alert('nghiem x1 là'+x1)
+        x2 = (-b+Math.sqrt(d))/2*a;
+        alert('nghiem x2 là'+x2);
+    }
+
+</script>
+</body>
+</html>

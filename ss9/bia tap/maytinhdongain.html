@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="cssmaytinh.css"/>
+</head>
+<body>
+    <form method="post">
+        <table>
+            <tr>
+                <th colspan="5"><input id="kq" placeholder="hienthiketqua"></th>
+            </tr>
+            <tr>
+                <td><input type="button"  onclick="tinh_toan(this.value)" value="1" ></td>
+                <td><input type="button"  onclick="tinh_toan(this.value)" value="2"></td>
+                <td><input type="button"  onclick="tinh_toan(this.value)" value="3"></td>
+                <td><input type="button"  onclick="tinh_toan(this.value)" value="+"></td>
+            </tr>
+            <tr>
+                <td><input type="button" onclick="tinh_toan(this.value)" value="4"></td>
+                <td><input type="button" onclick="tinh_toan(this.value)" value="5"></td>
+                <td><input type="button" onclick="tinh_toan(this.value)" value="6"></td>
+                <td><input type="button" onclick="tinh_toan(this.value)" value="-"></td>
+            </tr>
+            <tr>
+                <td><input type="button"  onclick="tinh_toan(this.value)" value="7"></td>
+                <td><input type="button"  onclick="tinh_toan(this.value)" value="8"></td>
+                <td><input type="button"  onclick="tinh_toan(this.value)" value="9"></td>
+                <td><input type="button"  onclick="tinh_toan(this.value)" value="*"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="c" onclick="xoa()"></td>
+
+                <td><input type="button" value="0" onclick="tinh_toan(this.value)"></td>
+                <td><input type="button" value="=" onclick="ketqua()"></td>
+                <td><input type="button" value="/" onclick="tinh_toan(this.value)"></td>
+
+            </tr>
+        </table>
+    </form>
+    <script>
+        let x='';
+        function a(id) {
+            return document.getElementById(id);
+        }
+        function tinh_toan(num) {
+            x+= num;
+            a('kq').value = x;
+        }
+        function xoa() {
+            x = '';
+            a('kq').value = x;
+
+        }
+        function ketqua() {
+            a('kq').value = eval(a('kq').value);
+            x=a('kq').value;
+        }
+    </script>
+
+</body>
+</html>
