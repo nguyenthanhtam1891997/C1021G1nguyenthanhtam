@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let num1 = 0;
+    let num2 = 1;
+    let temp;
+    let tong=num1+num2
+    let result2 = num1 +"," + num2;
+    for (let i =0; i<20;i++){
+        temp = num1 + num2;
+        num1 = num2;
+        num2 = temp;
+        result2 += ", "+ num2;
+        tong+=num2;
+
+    }
+
+    document.write(result2);
+    document.write("<br>"+""+tong)
+</script>
+</body>
+</html>
