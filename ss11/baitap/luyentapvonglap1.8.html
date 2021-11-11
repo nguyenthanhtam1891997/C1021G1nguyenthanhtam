@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>hayx chon so dung</h3>
+<input type="button" onclick="choi()" value="choi">
+<script>
+    function choi() {
+        let nhapso = prompt("hay nhập số trong khoang tu 0 den ")
+        let radome = parseInt(Math.random() * nhapso);
+        while (true) {
+            let luckynumber = prompt("hãy dựa vao linh cam dẻn chon số")
+            if (radome == luckynumber) {
+                alert("chuc mung ")
+                break;
+            } else if (luckynumber > radome ) {
+                alert("sai roi nho hon chut " )
+            }else if ( luckynumber < radome){
+                alert("sai roi lon hon chut " )
+            }
+        }
+    }
+</script>
+</body>
+</html>

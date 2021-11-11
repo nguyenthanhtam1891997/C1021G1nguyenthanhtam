@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let cot
+    let hang
+    let dai =20
+    let rong=7
+    for( cot=1;cot<=5;cot++){
+        for (hang=1;hang<=cot;hang++){
+            document.write("* ")
+        }
+        document.write("<br> ")
+    }
+    document.write("bai2"+"<br>")
+    for (cot=5;cot>=1;cot--){
+        for (hang=1;hang<=cot;hang++) {
+            document.write("*")
+        }
+        document.write("<br>")
+    }
+    document.write("bai3"+"<br>")
+    for (cot=1;cot<=5;cot++){
+        for (hang=cot;hang<=5;hang++) {
+            document.write( "&nbsp&nbsp")
+        }
+        for(hang=0;hang<cot;hang++){
+            document.write("*")
+        }
+        document.write("<br>")
+    }
+    document.write("bai4"+"<br>")
+    for( cot=0;cot<5;cot++){
+        for (hang=0;hang<cot;hang++){
+            document.write("&nbsp&nbsp")
+        }
+        for (hang=cot;hang<5;hang++){
+            document.write("*")
+        }
+        document.write("<br> ")
+    }
+    document.write("bai5"+"<br>")
+    for (let i=0;i<rong;i++){
+        for(let j=0;j<dai;j++){
+            if(i==0||i==(rong-1)||j==0||j==(dai-1)){
+                document.write("*")
+            }else {
+                document.write("&nbsp&nbsp")
+            }
+        }
+        document.write("<br> ")
+    }
+    document.write("bai6"+"<br>")
+    for(let i=1;i<7;i++){
+        for(let j=1;j<=7;j++){
+            if(!((i==1&&(j==1||j==4||j==7))
+            ||(i==4&&(j==1||j==7))
+            ||(i==5&&(j<=2||j>=6))
+            ||(i==6&&(j<=3||j>=5)))) {
+                document.write("*")
+            }else {
+                document.write("&nbsp&nbsp")
+            }
+        }
+        document.write("<br> ")
+    }
+
+</script>
+</body>
+</html>
