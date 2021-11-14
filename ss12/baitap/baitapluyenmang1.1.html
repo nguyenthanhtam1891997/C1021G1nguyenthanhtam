@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let array1 = [10,4,5,23,0,665,2,89,995,100];
+        for(let i =0;i<array1.length;i++){
+            if(array1[i]>=10){
+                document.write("<br>"+array1[i]);
+            }
+        }
+        //bai 2 bai3 lam gộp
+        let max = array1[0];
+        let indet = 0
+        let strs =array1.toString();
+        let x= ''
+        let ave ;
+        for (let i =0;i<array1.length;i++){
+            if(max<array1[i]){
+                max=array1[i]
+                indet = i;
+            }
+        }
+        for(let i =0;i<strs.length;i++){
+            x +=strs[i];
+        }
+        ave= eval(x)/strs.length;
+        document.write("<br> số lướn nhất là "+max);
+        document.write("<br> vị trí số lướn nhất là "+indet)
+        document.write("<br>"+x);
+        document.write("<br>  giá trị trung bình của các phần tử trong mảng là "+ave);
+
+
+
+
+
+
+    </script>
+</body>
+</html>

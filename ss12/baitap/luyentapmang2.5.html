@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array1 = new Array(parseInt(prompt("hãy nhập số lượng phần tử trong mãng 1 ")))
+    for (let i= 0;i<array1.length;i++){
+        array1[i]=parseInt(prompt("hãy nhập phần tử thứ " +i));
+    }
+    let array2 = new Array(parseInt(prompt("hãy nhập số lượng phần tử trong mãng 2 ")))
+    for (let i= 0;i<array2.length;i++){
+        array2[i]=parseInt(prompt("hãy nhập phần tử thứ " +i));
+    }
+    for (let i= 0;i<array2.length;i++) {
+        if (array1.indexOf(array2[i]) !== -1) {
+            console.log("true")
+        } else {
+            console.log("failure")
+        }
+    }
+</script>
+</body>
+</html>

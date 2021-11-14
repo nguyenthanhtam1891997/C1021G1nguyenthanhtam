@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let array = new Array(parseInt(prompt("hãy nhập số lượng phần tử trong mãng ")))
+        let negative = 0
+        for (let i= 0;i<array.length;i++){
+            array[i]=parseInt(prompt("hãy nhập phần tử thứ " +i));
+            if(array[i]<0){
+                negative++;
+            }
+        }
+        let v = parseInt(prompt("hãy nhập v"));
+        if(array.indexOf(v)!==-1){
+            document.write("<br> V is in the array")
+            array.splice(array.indexOf(v),1,)
+            array.push(0);
+        } else {
+            document.write("<br> V is not the array")
+        }
+        document.write("<br>"+ array);
+        document.write("<br> mãn đuọc đảo là "+array.reverse());
+        document.write("<br> số nguyen am trong mang là "+negative);
+    </script>
+</body>
+</html>

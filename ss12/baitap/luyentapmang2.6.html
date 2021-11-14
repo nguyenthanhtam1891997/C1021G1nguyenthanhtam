@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array1 = new Array(parseInt(prompt("hãy nhập số lượng phần tử trong mãng 1 ")))
+    let x= []
+    for (let i= 0;i<array1.length;i++){
+        array1[i]=(prompt("hãy nhập phần tử thứ " +i));
+    }
+    document.write(array1)
+    console.log(array1)
+    if(array1.indexOf("-")!==-1){
+        array1.splice(array1.indexOf("-"),1,"_")
+    }
+    console.log(array1)
+    document.write("<br>"+array1)
+</script>
+</body>
+</html>

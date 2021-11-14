@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let intex = prompt("hãy nhập từ càn tra cứu");
+        let english = ["green",'Red',"Violet","yellow"];
+        let viet = ["xanh","đỏ","tím","vàng"];
+        let x = 0;
+        for(let i=0;i<english.length;i++){
+            if(english.indexOf(intex) !==-1){
+                 x = english.indexOf(intex);
+            }else {
+                alert("If not found, display the message not found")
+            }
+        }
+        console.log(viet[x]);
+        alert(viet[x])
+    </script>
+</body>
+</html>

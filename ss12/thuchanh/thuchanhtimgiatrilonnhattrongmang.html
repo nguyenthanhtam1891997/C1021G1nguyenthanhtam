@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let numbers = [-3,5,20,3,2,10];
+        let max = numbers[0];
+        let index = 0;
+        for(let i =0;i<numbers.length;i++){
+            if(max<numbers[i]){
+                max = numbers[i];
+                index = i;
+            }
+        }
+        document.write("so lon nhat trong mang la "+max+" tai vi tri so "+index+" trong mang")
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let intext = prompt("hãy nhập chữ vào ");
+        let hoa = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let thuong = 'abcdefghijklmnopqrstuvwxyz';
+        let aray = [];
+        for(let i=0;i<intext.length;i++){
+            if(hoa.indexOf(intext[i]) !==-1){
+                aray.push(intext[i].toLowerCase())
+            }else if(thuong.indexOf(intext[i]) !==-1){
+                aray.push(intext[i].toUpperCase());
+            }else{
+                aray.push(intext[i]);
+            }
+        }
+        console.log(intext)
+        console.log(aray.join(""))
+        console.log(aray)
+
+    </script>
+</body>
+</html>

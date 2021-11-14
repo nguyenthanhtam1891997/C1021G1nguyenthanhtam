@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let array1 = new Array(parseInt(prompt("hãy nhập số lượng phần tử trong mãng  ")))
+    let x = ['0','1','2','3','4','5','6','7','8','9']
+    let num =0
+    let tex = 0
+    for (let i= 0;i<array1.length;i++){
+        array1[i]=prompt("hãy nhập phần tử thứ " +i);
+        if(x.indexOf(array1[i])!==-1){
+            num++
+        }else{
+            tex++
+        }
+    }
+    console.log(array1)
+    console.log(" ký tự số trong mảng là "+num)
+    console.log("số từ trong một chuỗ"+tex)
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let numbers = prompt("hay nhap mot day so")
+        let change_string = numbers.toString();//chuyển số sang chuổi
+        let change_array = [change_string[0]];//khai báo mãng có gí trị là số dầu tien trong chuỗi
+        for(let i=1;i<change_string.length;i++){                //cho i chay trong do dài chuỗi
+            if(change_string[i-1]%2==0&&change_string[i]%2==0){ //cho dièu kiện sô dau và sau dèu chia hêt cho 2
+                change_array.push('-',change_string[i])            // them dau - và số có vị trí là i trong chuõi vào mãng
+            }else{
+                change_array.push(change_string[i]);                //
+            }
+        }
+        console.log(change_array)
+        document.write(change_array+"<br>")
+        document.write(change_array.join('')+"<br>")
+        console.log(change_array.join('*'))
+        document.write(change_array.join('*'))
+    </script>
+</body>
+</html>
