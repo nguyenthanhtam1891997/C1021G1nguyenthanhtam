@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function checksnt(vao) {
+            let dem= 0
+            for(let i =0;i<=vao;i++){
+                if(vao % i === 0){
+                    dem++
+                }
+            }
+            if (dem === 2){
+                return true;
+            }else {
+                return false;
+            }
+        }
+        let dem100=0;
+        let chay= 1;
+        while (true){
+            if(checksnt(chay)===true){
+                dem100++;
+                console.log(chay)
+            }
+            if(dem100==10){
+                break;
+            }
+            chay++;
+        }
+
+    </script>
+</body>
+</html>
