@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arraytex = [];
+    let num = parseInt(prompt("nhập sô phan tu"))
+    for (let i =0;i<num;i++){
+        arraytex[i] = (prompt("nhap phan tu thu n "+i))
+    }
+       console.log(arraytex);
+    let tex = prompt("nhập kí tự bất kì ")
+    function cond(a,b) {
+        let num1=0
+        let c = a.join('')
+        if(c.indexOf(b)==-1){
+             num1 = -1
+        }else {
+            for(let i = 0;i<c.length;i++ ){
+                    if(c[i]===b){
+                    num1++
+                }
+            }
+        }
+
+        return num1
+    }
+    let e = cond(arraytex,tex)
+    console.log(e)
+
+</script>
+</body>
+</html>

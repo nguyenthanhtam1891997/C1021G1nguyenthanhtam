@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let array = [];
+        let num = parseInt(prompt("nhập sô phan tu"))
+        for (let i =0;i<num;i++){
+            array[i] = parseInt(prompt("nhap phan tu thu n "+i))
+        }
+        console.log(array)
+        function invetidarr(arr) {
+               // arr.reverse();
+            let i = 0;
+            let j = num-1
+            while (i<j){
+                let x= arr[i];
+                arr[i] = arr[j];
+                arr[j] = x;
+                i++;
+                j--;
+            }
+        }
+        invetidarr(array);
+        console.log(array)
+
+
+    </script>
+</body>
+</html>

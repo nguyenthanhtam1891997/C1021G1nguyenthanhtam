@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let a = [];
+        let num = parseInt(prompt("hay nhập số phàn tử"));
+        for(let i = 0;i<num;i++){
+            a[i]=parseInt(prompt("nhap phan tu " + i));
+        }
+        function min_max(arr) {
+            let max = [] ;
+            let min = [];
+          for(let i = 0;i<a.length;i++){
+              if(max<a[i]){
+                  max= a[i]
+              }
+          }
+            for(let i = 0;i<a.length;i++){
+                if(min>a[i]){
+                    min= a[i]
+                }
+            }
+            return [max,min]
+
+        }
+        let b= min_max(a);
+        console.log(a);
+        console.log(b[0],b[1])
+    </script>
+</body>
+</html>

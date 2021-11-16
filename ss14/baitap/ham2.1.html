@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function square(num) {
+        return num*num
+    }
+    function scvcircle(num){
+           let s = num*num*3.14;
+           let cv = 2*num*3.14;
+           return [s,cv]
+    }
+    function factorial(num){
+        let n = 1
+
+        for( let i = 1;i <= num;i++){
+            n = n*i
+        }
+        return n
+    }
+    function numbeortex(innumortex){
+       if(isNaN(innumortex)===false){
+           return true
+       }else{
+           return false
+       }
+    }
+    let   innum = parseFloat(prompt("nhập số "));
+    console.log(innum)
+    let insquare =square(innum)
+    console.log("bình phương của số vừa nhập là"+insquare)
+    let circle = scvcircle(innum)
+    console.log("diện tích hình tron khi được nhap ban kinh là "+circle[0])
+    console.log("chu vi hinh tron là "+circle[1])
+    let infactorial = factorial(innum)
+    console.log("giai thừa của một số "+infactorial)
+    let texornum = prompt("hãy nhập vao một kí tụ bất kì ")
+    let kiosi = numbeortex(texornum)
+    console.log(kiosi);
+</script>
+</body>
+</html>
