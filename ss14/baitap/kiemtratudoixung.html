@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function  check(str,a,c) {
+            if(a==c){
+                return  true
+                console.log(2)
+            }
+
+            if(str.charAt(a) !== str.charAt(c)){
+                console.log(3)
+                return false
+            }
+            if(a<c+1){
+                check(str,a+1,c-1);
+                console.log(4)
+            }
+            console.log(5)
+            return true
+        }
+
+        function isPalindrome(str){
+            let b=  str.length;
+            console.log(b)
+            if(b==0){return true;}
+            return  check (str,0,b-1) ;
+        }
+        let x=prompt("hãy nhập mọt từ bất kì ")
+       console.log(isPalindrome(x))
+    </script>
+</body>
+</html>
