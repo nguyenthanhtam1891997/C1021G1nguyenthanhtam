@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 400px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 4px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+    </style>
+    <h3>Add New Product</h3>
+    <p><input type="text " id="addarr"><button type="button" onclick="addarray()">Add</button></p>
+    <h3>Display All Product</h3>
+    <p id="display"></p>
+
+    <script>
+        let indisplay = document.getElementById("display");
+        let arrname = ["Sony Xperia", "Samsung Galaxy", "Nokia 6", "Xiaomi Redmi Note 4", "Apple iPhone 6S",
+            "Xiaomi Mi 5s Plus", "Apple iPhone 8 Plus", "Fujitsu F-04E", "Oppo A71"];
+        let data = '';
+        function displayarr() {
+            data = "<table border='1'>";
+            for (let i =0;i<arrname.length;i++){
+                data += "<tr>";
+                data += "<td>"+(i+1)+"</td>";
+                data += "<td>"+arrname[i]+"</td>";
+                data += "<td><button id='("+i+")' onclick='deletename(this.id)' style='background-color: #4CAF50'>deletd</button.></td>";
+                data += "</tr>";
+            }
+            data += "</table>";
+            indisplay.innerHTML = data;
+
+        }
+        function addarray(){
+            console.log(1)
+            let x = document.getElementById("addarr").value;
+            console.log(x);
+            x.toString();
+            arrname.push(x);
+            console.log(arrname)
+
+
+            displayarr();
+        }
+        function deletename(clicked_id){
+                arrname.splice(clicked_id,1);
+            console.log(clicked_id)
+            displayarr();
+        }
+        displayarr();
+    </script>
+</body>
+</html>

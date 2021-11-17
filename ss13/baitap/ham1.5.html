@@ -9,11 +9,18 @@
     let namestar =["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe" , "Regulus"];
     let Constellation =["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila","Ursa Major", "Leo"]
     function innamestar(a) {
-           if( namestar.indexOf(a)!==-1){
-               alert( Constellation[namestar.indexOf(a)])
-           }else {
-               alert("not found")
-           }
+        for(let i =0;i<namestar.length;i++){
+            if(namestar[i]==a){
+                alert("chòm sao tương ứng là "+Constellation[i])
+            }else {
+                alert("not found")
+            }
+        }
+        //  if( namestar.indexOf(a)!==-1){
+         //      alert( Constellation[namestar.indexOf(a)])
+          // }else {
+         //      alert("not found")
+         //  }
     }
     let inname = prompt("nhap ten ngoi sao");
     innamestar(inname)
