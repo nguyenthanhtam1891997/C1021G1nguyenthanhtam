@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+            class Date{
+                constructor(day,month,year) {
+                    this.day = day;
+                    this.month = month;
+                    this.year = year;
+                }
+                getday(day){
+                    return this.day;
+                }
+                getmonth(month){
+                    return this.month;
+                }
+                getyear(year){
+                    return this.year;
+                }
+                setday(day){
+                  return   this.day = day
+                }
+                setmonth(month){
+                   return  this.month = month
+                }
+                setyear(year){
+                    return this.year = year
+                }
+            }
+            let date = new Date(18,10,2001);
+            let day = date.getday();
+            let month = date.getmonth();
+            let year = date.getyear();
+            console.log(date)
+            console.log(day + "/"+month+"/"+year);
+            day = date.setday(4);
+            month = date.setmonth(5);
+            year = date.setyear(1995);
+            console.log(date)
+            console.log(day + "/"+month+"/"+year);
+
+    </script>
+</body>
+</html>
