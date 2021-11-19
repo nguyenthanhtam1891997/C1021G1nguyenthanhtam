@@ -7,64 +7,59 @@
 <body>
     <script>
         class Telephon{
-            constructor(name, pateri) {
+            constructor(name, pateri,status) {
                 this.name = name;
                 this.pateri = pateri;
                 this.memorytex = "";
-                this.memorysen = "";
-                this.memorycore = "";
+                this.memorysen = [];
+                this.memorycore = [];
+                this.status = status;
             }
 
             turnonorturnoff() {
                 confirm("bạn có muốn bật điện thoại")
-                return this.checkonoff()
+                if(confirm()){
+                    return this.status= true
+                }else {return this.status= false}
             }
 
             checkonoff() {
-                if (confirm()==true) {
+                if (this.status == true) {
                     console.log("điện thoại dang bât")
-                    return true
+
                 } else {
                     console.log("điện thoại chưa đuọc bật")
-                    return this.runornotrun()
                 }
             }
             runornotrun(){
-                console.log("bạn chưa bật điẹn thoại")
-                return this.turnonorturnoff()
+                if(this.status ==true){
+                    return true
+                }else {return false}
+
             }
 
             texting() {
-                if (this.checkonoff() == true) {
+                if (this.runornotrun() == true) {
                     console.log("dang soan tin nhan")
                     this.memorytex = prompt("hay nhạp tin nhan")
                 } else {
                     console.log("chưa bật máy nên không thể soạn tin nhắn")
                 }
-                // confirm("bạn co muón goi tin nhắn");
-                // if (confirm() == true) {                        // đạt điều kiện ở đây thì thì cái memorysen ở dưới lại có giá trị ?
-                //
-                //      this.memorysen = this.memorytex;
-                // }
-                 this.senmesseage();
-
             }
 
             senmesseage(phone) {
-                // if (confirm() == true) {
-                //
-                //     this.memorysen = this.memorytex;//// tại sao đặt điều kiện ở đây thì cái memorysen = rỗng ?
-                // }
-                //    console.log("ok")
-                confirm("bạn co muón goi tin nhắn");
-                if (confirm() == true) {
+                if (this.runornotrun() == true) {
+                    confirm("bạn co muón goi tin nhắn");
+                    if (confirm() == true) {
+                        this.memorysen.push(this.memorytex);
+                        
+                    }
 
-                    this.memorysen = this.memorytex;  //// tại sao đặt điều kiện ở đây thì cái memorysen = rỗng ?
                 }
-
             }
             coremessage(phone){
-                this.memorycore = phone.memorysen;
+                this.memorycore.push(phone.memorytex)
+                this.memorytex="";
             }
             chargepateri(){
                     if(this.pateri<100){
@@ -79,17 +74,22 @@
                     }
             }
         }
-        let nokia = new Telephon("nokia",100);
-        let iphone = new Telephon("iphone",80);
-        console.log(nokia);
+        let nokia = new Telephon("nokia",100,false);
+        let iphone = new Telephon("iphone",80,false);
+        let opo3a  = new Telephon("opo 3a",40,false)
+        console.log(nokia)
         console.log(iphone)
-        // nokia.turnonorturnoff();
-        nokia.texting()
-        console.log("vùng nhớ tin nhắn đang chuẩn bị gưởi là: "+nokia.memorytex);
-        console.log("vung nhớ tin dã gưởi là: "+nokia.memorysen);
+        console.log(opo3a)
+        nokia.turnonorturnoff();
+        nokia.texting();
         nokia.senmesseage(iphone);
         iphone.coremessage(nokia);
-        console.log("iphone đã nhậ tin "+iphone.memorycore)
+        console.log("iphone   "+iphone.memorycore);
+        nokia.texting();
+        nokia.senmesseage(opo3a);
+        opo3a.coremessage(nokia);
+        console.log("opo3a    "+opo3a.memorycore);
+
     </script>
 </body>
 </html>
