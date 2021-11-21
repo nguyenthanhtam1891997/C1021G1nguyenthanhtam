@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        class Apple{
+            constructor(weight) {
+                this._weight = weight
+            }
+            getWeight(){
+                return this._weight
+            }
+            decreaseApple(){
+                if(this._weight > 0){
+                    this._weight -- ;
+                }
+            }
+        }
+        class Human{
+            constructor(name, gender , weight) {
+                this._name = name;
+                this._gender = gender;
+                this._weight = weight;
+            }
+            speak(tex){
+                console.log(tex )
+            }
+            eatApple(appleobj){
+                if(appleobj.getWeight()>0){
+                    appleobj.decreaseApple()
+                   this._weight++
+                }else if(appleobj.getWeight()==0) {
+                    console.log("hết táo ")
+                }
+            }
+            checkApple(appleobj){
+               if (appleobj.getWeight()>0){
+                   return true
+               }else if(appleobj.getWeight()==0){return false}
+            }
+            getName(){
+                return this._name
+            }
+            setName(name){
+                this._name = name
+            }
+            getWeightHuman(){
+                return this._weight
+            }
+            setWeightHuman(value){
+                this._weight = value
+            }
+        }
+        let apple01 = new Apple(3)
+        let adam = new Human("Adam","nam",70);
+        let eva = new Human("Eva","nữ",50)
+        console.log(adam);
+        console.log(eva);
+        console.log(apple01);
+        adam.speak("hãy ăn tao");
+        eva.speak("đưa đây");
+        adam.speak("nè ");
+        eva.eatApple(apple01);
+        console.log(eva.getWeightHuman());
+        console.log(adam.checkApple(apple01));
+        adam.eatApple(apple01);
+        adam.eatApple(apple01);
+        console.log(adam.checkApple(apple01));
+        eva.setName("elit")
+        console.log(eva)
+    </script>
+</body>
+</html>

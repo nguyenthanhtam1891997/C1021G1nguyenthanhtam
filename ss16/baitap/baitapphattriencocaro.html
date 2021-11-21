@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button onclick="setArray()">Reset</button>
+    <p id="game-board"></p>
+    <script>
+        let board = document.getElementById("game-board");
+        let row = parseInt(prompt("nhap hang"));
+        let col = parseInt(prompt("nhap cot"));
+        let arr = new Array(row)
+        let data = '';
+        let checkPlayer = true;
+        function setArray() {
+            for (let i =0;i<arr.length;i++){
+                arr[i]=new Array(col)
+                for(let j =0;j<arr[i].length;j++){
+                    arr[i][j]="";
+                }
+            }
+            checkPlayer = true;
+            displayBoard()
+        }
+        function displayBoard() {
+            data = "<table border ='1'>";
+            for (let i = 0; i < arr.length; i++) {
+                data += "<tr>";
+                for (let j = 0; j < arr.length; j++) {
+                    data += "<td onclick='changeValue("+i+","+j+")' style='text-align: center;height: 20px;width: 20px'>"+arr[i][j]+"</td>"
+                }
+                data += "</tr>";
+            }
+            data += "</table>";
+            board.innerHTML = data;
+        }
+        function changeValue(i,j){
+            if(checkPlayer && checkInput(i,j)){
+                arr[i][j] = "X";
+                checkPlayer = false;
+                if (checkWin("X")){
+                    alert("nguoi choi X thang ")
+                    setArray()
+                }
+            }else if(!checkPlayer && checkInput(i,j)){
+                arr[i][j] = "O";
+                checkPlayer = true;
+                if(checkWin("O")){
+                    alert("nguoi choi O thang ")
+                    setArray()
+                }
+            }
+            displayBoard()
+
+        }
+        function checkInput(i,j){
+            if(arr[i][j]==="X"||arr[i][j]==="O"){
+                alert("o nay da duoc nhap")
+                return false
+            }
+            return true
+
+        }
+        function checkWin(player){
+            for (let i=0;i<arr.length;i++){
+                for (let j=0;j<arr.length;j++){
+                    if(arr[i][j]===player){
+                        if(arr[i][j+1]===player && arr[i][j+2]===player && arr[i][j+3]===player && arr[i][j+4]===player ){
+                            return true
+                        }
+                        if(arr[i+1][j]===player && arr[i+2][j]===player && arr[i+3][j]===player && arr[i+4][j]===player){
+                            return true
+                        }
+                        if(arr[i+1][j-1]===player && arr[i-1][j+1]===player && arr[i+2][j-2]===player && arr[i-2][j+2]===player ){
+                            return true
+                        }
+                        if(arr[i+1][j+1]===player && arr[i-1][j-1]===player && arr[i+2][j+2]===player && arr[i-2][j-2]===player ){
+                            return true
+                        }
+                    }
+                }
+            }
+            return false
+        }
+setArray()
+displayBoard()
+    </script>
+</body>
+</html>

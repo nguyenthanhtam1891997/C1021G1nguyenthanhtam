@@ -8,58 +8,61 @@
     <script>
         class Battery{
             constructor(enegry) {
-                this.enegry = enegry;
+                this._enegry = enegry;
             }
             getEneregy(enegry){
-                return this.enegry
+                return this._enegry
             }
-            setEneregy(enegry){
-                this.enegry = enegry;
+            setEneregy(value){
+                this._enegry = value;
             }
             decreaseEnegry(){
-                if(this.enegry>0){
-                    this.enegry--
+                if(this._enegry>0){
+                    this._enegry--
                 }
             }
         }
         class Flashlamp {
             constructor(battery,status) {
-               this.battery = battery;
-               this.status = status;
+               this._battery = battery;
+               this._status = status;
             }
-            getBtteryInfor(){
-                return this.battery.getEneregy();
+            getStatus(){
+                return this._status;
+            }
+            getBattery(){
+                return this._battery;
+            }
+            setBattery(value){
+                this._battery = value;
             }
 
             light(){
-                if(this.status){
-                    alert("Lighting");
-                    this.battery. decreaseEnegry()
+                if(this._status){
+                    alert("đèn đang bật");
                 }else {
-                    alert("not lighting")
+                    alert("đèn đang tắt ")
                 }
 
             }
 
             turnon(status) {
-                this.status = true
+                if(this._battery.getEneregy()>0){
+                    this._status = true
+                    this._battery.decreaseEnegry();
+                }else {alert("hết bin ")}
             }
-            turnoff(status) {
-                this.status = false
+            turnoff() {
+                this._status = false
             }
         }
-
-        let bin = new Battery();
-        bin.setEneregy(3);
-        console.log(bin);
-        let lamp = new Flashlamp(bin, false);
-        console.log(lamp);
-        // lamp.light();
-        // lamp.turnon()
-        lamp.light()
-        lamp.turnoff()
-        console.log(lamp.getBtteryInfor());
-        console.log(lamp.status)
+        let battery = new Battery(10);
+        let flashlamp = new Flashlamp(battery,false);
+        console.log(battery.getEneregy())
+        flashlamp.light();
+        flashlamp.turnon();
+        flashlamp.light();
+        console.log(battery.getEneregy())
     </script>
 </body>
 </html>
