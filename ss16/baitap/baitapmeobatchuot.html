@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        class Animal {
+            constructor(name,weight,speed) {
+                this._name = name;
+                this._weight = weight;
+                this._speed = speed;
+            }
+
+        }
+        class Rat extends Animal{
+            constructor(name,weight,speed,status) {
+                super(name,weight,speed);
+                this._status = status;
+            }
+            getStatus(status){
+                return this._status;
+            }
+            setStatus(status){
+                this._status=status;
+            }
+            growl(){
+                console.log(this._name+"chit ,chit");
+            }
+        }
+        class Cat extends Animal{
+            constructor(name,weight,speed) {
+                super(name,weight,speed);
+            }
+            growl(){
+                console.log(this._name+"meo, meo")
+            }
+            catchRat(ratObj){
+                console.log("dang bat chuot");
+                if(this._speed>ratObj._speed){
+                    this.eatRat(ratObj)
+                }else {
+                    console.log("khong bat duoc chuot")
+                }
+            }
+            eatRat(ratObj){
+                console.log("an chuot");
+                if(ratObj._status=="song"){
+                    this._weight+=ratObj._weight;
+                    ratObj._status="chet";
+                    console.log("khoi luong meo "+this._weight)
+                }else {
+                    console.log("chuot chet khong an")
+                }
+            }
+        }
+        let rato =new Rat("Jerry",3,9,"chet")
+        let cato = new Cat("Tom",5,10)
+        console.log(cato)
+        console.log(rato)
+        rato.setStatus("song");
+        console.log(rato.getStatus())
+        cato.catchRat(rato)
+        cato.eatRat(rato);
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+            <script>
+                class Remote{
+                    constructor(code) {
+                        this.code = code;
+                    }
+                    changeChanneltv(tv,value){
+                        tv.changeValueChannel(value);
+                    }
+                    changeUppVolumtv(tv){
+                        tv. changeUppvolum();
+                    }
+                    changeDowVolumtv(tv){
+                        tv. changeUppvolum()
+                    }
+                    tunOntivi(tv){
+                        tv.tunOn();
+                    }
+                    tunOfftivi(tv){
+                        tv.tunOff();
+                    }
+                }
+                class Tivi{
+                    constructor(valuechannel,valuevolum,status) {
+                        this.valuechannel = valuechannel;
+                        this.valuevolum = valuevolum;
+                        this.status = status;
+                    }
+                    tunOn(){
+                        this.status = true;
+                    }
+                    tunOff(){
+                        this.status = false
+                    }
+                    onOroff(status){
+                        if (this.status==true){
+                            console.log("ti vi dang bat")
+                        }else if (this.status==false) {
+                            console.log("ti vi dan tat")
+                        }
+                    }
+                    changeValueChannel(value){
+                        this.valuechannel =value
+                        console.log("ti vi dang o kenh "+value)
+
+                    }
+                    changeUppvolum(){
+                        this.valuevolum+=1
+                        console.log("am luong la "+this.valuevolum)
+                    }
+                    changeDowvolum(){
+                        this.valuevolum-=1
+                        console.log("am luong la "+this.valuevolum)
+                    }
+
+                }
+                let tivisoni = new Tivi(5,40,false)
+                let remote = new Remote("tvcdx102")
+                console.log(tivisoni)
+                console.log(remote)
+                tivisoni.tunOn();
+                tivisoni.onOroff();
+                tivisoni.changeValueChannel(7)
+                remote.changeChanneltv(tivisoni,3)
+                tivisoni.changeValueChannel(5)
+                remote.changeUppVolumtv(tivisoni)
+                remote.changeUppVolumtv(tivisoni)
+                remote.tunOfftivi(tivisoni);
+                tivisoni.onOroff();
+            </script>
+</body>
+</html>
