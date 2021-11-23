@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let num = parseInt(prompt("nhập tiền "))
+        let minus = 0
+        let salary = 0
+        if(num>15){
+            minus = (20/100)*num
+            salary = num-minus
+        }
+        if(num>=7&&num<=15){
+            minus =(10/100)*num;
+            salary = num-minus;
+        }
+        if(num<7){
+            minus=(5/100)*num;
+            salary = num-minus;
+        }
+        console.log(minus,salary)
+    </script>
+</body>
+</html>

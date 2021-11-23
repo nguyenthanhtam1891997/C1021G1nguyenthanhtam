@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("nhập chiều dài mãng a"))
+        let arr=[]
+        let a=[]
+        let b =[]
+        for(let i=0;i<n;i++){
+            a[i]=parseInt(prompt("nhập số"))
+        }
+        let m = parseInt(prompt("nhập chiều dài mãng b"))
+        for(let i=0;i<m;i++){
+            b[i]=parseInt(prompt("nhập số"))
+        }
+        if(m>n) {
+            for (let i = 0; i < m; i++) {
+                if (a.indexOf(b[i]) == -1) {
+                    arr.push(b[i])
+                }
+            }
+        }else if(n>m){
+            for (let i = 0; i < n; i++) {
+                if (b.indexOf(a[i]) == -1) {
+                    arr.push(a[i])
+                }
+            }
+        }
+        console.log(a)
+        console.log(b)
+        console.log(arr)
+    </script>
+</body>
+</html>

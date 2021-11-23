@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let dai = parseInt(prompt("nhập chiều dai"))
+        let rong = parseInt(prompt("nhap chieu rong "))
+        for (let i=0;i<rong;i++){
+            for (let j=0;j<dai;j++){
+                if(i==0||i==rong-1||j==0||j==dai-1){
+                    document.write("*")
+                }else {
+                    document.write('&nbsp&nbsp')
+                }
+            }
+            document.write("<br>")
+        }
+    </script>
+</body>
+</html>
