@@ -6,7 +6,37 @@
 </head>
 <body>
     <script>
-        let menu = ["Cafe","Cam vắt","Nước ép cà rốt","Nước ép cà chua","Nước lọc","Nước dừa"]
+        let valueMenu = [15000,20000,25000,25000,7000,12000]
+        let input
+        let input2
+        let sum=0
+        document.write(
+            '<ol type="1">' +
+            '<li>Cà phê</li>' +
+            '<li>Cam vắt</li>' +
+            '<li>Nước ép cà rốt</li>' +
+            '<li>Nước ép cà chua</li>' +
+            '<li>Nước lọc</li>' +
+            '<li>Nước dừa</li>' +
+            '</ol>')
+
+        do {
+             input = parseInt(prompt("hãy lựa chon số "))
+            if(input==7){
+                break
+            }else {
+                alert("đơn giá là " + valueMenu[input - 1])
+                input2 =parseInt(prompt("hãy nhập số lượng"))
+            }
+            sum+=input2*valueMenu[input-1]
+            console.log(input2)
+            console.log(sum)
+        }while (input<7)
+        console.log(input2)
+        console.log(sum)
+
+
+
     </script>
 </body>
 </html>

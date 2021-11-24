@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let input = prompt("nhập tên")
+        let lowe = input.toLowerCase();
+        let outPut = []
+        let max
+        lowe = lowe.split(" ")
+        function main() {
+            console.log(input)
+           // let input = prompt("nhập tên")
+            // let lowe = input.toLowerCase();
+            // let outPut = []
+            // let max = 0
+            // lowe = lowe.split(" ")
+            tuUpp()
+            Longtex()
+        }
+
+        function tuUpp() {
+
+            for (let i = 0; i < lowe.length; i++) {
+                lowe[i] = lowe[i].charAt(0).toUpperCase() + lowe[i].slice(1);
+                if (lowe[i] !== '') {
+                    outPut.push(lowe[i])
+                }
+
+            }
+            console.log(lowe)
+            console.log(outPut.join(" "))
+        }
+
+        function Longtex() {
+            max = lowe[0].length
+            for (let i = 0; i < lowe.length; i++) {
+                if (max < lowe[i].length) {
+                    max = lowe[i];
+                }
+
+            }
+            console.log(max)
+        }
+
+        main()
+
+
+
+
+        // for (let i = 0; i < x.length; i++) {
+        //     x[i] = x[i].toLowerCase()
+        //     x[i] = x[i].charAt(0).toUpperCase() + x[i].slice(1)
+        //     console.log(x[i]);
+        //     if(x[i]!==''){
+        //         c.push(x[i])
+        //     }
+        // }
+        // console.log(c.join(" "))
+
+    </script>
+</body>
+</html>
