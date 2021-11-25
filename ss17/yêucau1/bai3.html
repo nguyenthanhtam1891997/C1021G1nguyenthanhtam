@@ -8,6 +8,9 @@
     <script>
         let h=parseInt(prompt("hay nhap chieu cao"))
         for(let i=1;i<=h;i++){
+            for(let k=h;k>i;k--){
+                document.write("&nbsp&nbsp")
+            }
             for(let j=1;j<=i*2-1;j++){
                 document.write("*")
             }

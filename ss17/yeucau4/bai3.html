@@ -5,19 +5,31 @@
     <title>Title</title>
 </head>
 <body>
+<button type="button" onclick="sum()">Sum</button>
+<p id="12"></p>
     <script>
         let s1 ="aabcc"
         let s2 ="adcaa"
         let num = 0
+        let m =5
+        let v =6
+        let x = document.getElementById("12")
         console.log(s1)
         console.log(s2)
-        for (let i=0;i<s1.length;i++){
+        for (let  i=0;i<s1.length;i++){              ///i=1 ddieeug kieenj i<=chuooix .leng
             if(s2.indexOf(s1[i])!==-1){
                 num++;
                 s2=s2.replace(s1[i],'')
             }
         }
             console.log(num)
+        function sum (){
+            return m+v
+        }
+        x.innerHTML=sum().value
+
+
+
     </script>
 </body>
 </html>

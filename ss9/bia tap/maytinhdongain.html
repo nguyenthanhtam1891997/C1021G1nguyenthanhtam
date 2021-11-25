@@ -41,21 +41,22 @@
     </form>
     <script>
         let x='';
-        function aden(id) {
+        function a(id) {
             return document.getElementById(id);
         }
         function tinh_toan(num) {
-            x+= num;
+            x+= num;//x(xmoi)=x(cu)+num
             a('kq').value = x;
         }
         function xoa() {
             x = '';
             a('kq').value = x;
+           // document.getElementById("kq").value=x
 
         }
         function ketqua() {
             a('kq').value = eval(a('kq').value);
-            x=a('kq').value;
+           // x=a('kq').value;
         }
     </script>
 
