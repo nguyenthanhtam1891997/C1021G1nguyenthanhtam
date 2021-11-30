@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function changeName(name) {
+            let low_name = name.toLowerCase().trim()
+            let arr_name = Array.from(low_name)
+            console.log(arr_name)
+            for (let i = 0; i < arr_name.length ; i++) {
+                if (arr_name[i] === ' ' && arr_name[i + 1] === ' ') {
+                    arr_name.splice(i + 1, 1)
+                    i--
+                }
+            }
+            arr_name[0]=arr_name[0].toUpperCase()
+            for (let i=0;i<arr_name.length;i++){
+                if(arr_name[i]===" "){
+                    arr_name[i+1]=arr_name[i+1].toUpperCase()
+                }
+            }
+            return arr_name.join("")
+        }
+        function maxLong(name){
+            name=name.split(" ")
+            let max= name[0]
+            for (let i=1;i<name.length;i++){
+                if(max.length<name[i].length){
+                    max=name[i]
+                }
+            }
+            return max
+        }
+
+        let name = prompt("nhap ten")
+        console.log(name)
+        console.log(changeName(name))
+        console.log(maxLong(changeName(name)))
+
+
+    </script>
+</body>
+</html>

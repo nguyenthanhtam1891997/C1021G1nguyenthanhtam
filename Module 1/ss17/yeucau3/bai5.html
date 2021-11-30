@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let valueMenu = [15000,20000,25000,25000,7000,12000]
+        let input
+        let input2
+        let sum=0
+        let m = "hãy chọn đồ uống " +
+                "\n1.Cà phê" +
+            "\n2.Cam vắt" +
+            "\n3.Nước ép cà rốtt" +
+            "\n4.Nước ép cà chua" +
+            "\n5.Nước lọc" +
+            "\n6.Nước dừa" +
+            "\n7.thoát gọi món"
+
+        // document.write(
+        //     '<ol type="1">' +
+        //     '<li>Cà phê</li>' +
+        //     '<li>Cam vắt</li>' +
+        //     '<li>Nước ép cà rốt</li>' +
+        //     '<li>Nước ép cà chua</li>' +
+        //     '<li>Nước lọc</li>' +
+        //     '<li>Nước dừa</li>' +
+        //     '</ol>')
+
+        do {
+             input = parseInt(prompt(m))
+            if(input==7){
+                break
+            }else {
+                alert("đơn giá là " + valueMenu[input - 1])
+                input2 =parseInt(prompt("hãy nhập số lượng"))
+            }
+            sum+=input2*valueMenu[input-1]
+            console.log(input2)
+            console.log(sum)
+        }while (input<7)
+        console.log(input2)
+        console.log(sum)
+
+
+
+    </script>
+</body>
+</html>

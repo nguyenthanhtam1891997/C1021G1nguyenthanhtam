@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>câu 1</title>
+</head>
+<body>
+<script>
+    let m = parseInt(prompt("nhập độ dài mãng "))
+    let arr=[];
+    let sum = 0
+    let count =0
+    for (let i=0;i<m;i++){
+        arr[i]=parseInt(prompt(" hay nhập các phần tử trong mãng"))
+        if(arr[i] % 3===0){
+            sum += arr[i];
+            count++;
+        }
+    }
+    console.log("tổng trung bình các số chia hết cho 3 có trong mang là "+(sum/count))
+</script>
+</body>
+</html>

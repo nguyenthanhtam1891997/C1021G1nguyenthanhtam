@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+
+        // let sumNumber= 0
+        // let m = parseInt(prompt("hay nhap so mang can nhap"))
+        // let a = new matrix(m);
+        // let n = 0;
+        // let snt = [];
+        // let max = 0;
+        // let min =0;
+        //
+        // for (let i = 0; i < a.length; i++) {
+        //     n = parseInt(prompt("hay nhập phần do dai mãng  " + i))
+        //     a[i] = new matrix(n);
+        //     for (let j = 0; j < a[i].length; j++) {
+        //         a[i][j] = parseInt(prompt("nhập vao vị trí " + i + j))
+        //     }
+        // }
+        //
+        // function Sum(arr){
+        //     arr=[].concat.apply([],arr)
+        //     for(let i=0;i<arr.length;i++){
+        //         if(arr[i] % 2===0){
+        //             sumNumber=sumNumber+arr[i]
+        //         }
+        //     }
+        //
+        // }
+        // function Check_num(arr){
+        //     let count =0
+        //     arr=[].concat.apply([],arr)
+        //     for (let i=0;i<arr.length;i++){
+        //         for (let j=1;j<=arr[i];j++){
+        //             if(arr[i] % j===0){
+        //                 count++
+        //             }
+        //         }
+        //         if(count===2){
+        //             snt.push(arr[i])
+        //         }
+        //         count=0
+        //     }
+        // }
+        // function Max_min(arr){
+        //     arr=[].concat.apply([],arr)
+        //     max=Math.max.apply(Math,arr)
+        //     min = Math.min.apply(Math,arr)
+        // }
+        // Sum(a)
+        // Check_num(a)
+        // Max_min(a)
+        // console.log("mãng 2 chiều được thành lập"+a)
+        // console.log("tổng của các số chia hết cho 2 "+sumNumber)
+        // console.log("các số là số nguyên tố "+snt)
+        // console.log("số lớn nhất trong mãng 2 chiều "+max)
+        // console.log("số nhỏ nhất trong mãng 2 chiều "+min)
+
+        function sumEvenNumber(matr) {
+            let sum = 0
+            for (let i=0;i<matr.length;i++){
+                for (let j=0;j<matr[i].length;j++){
+                    if (matr[i][j] % 2 ===0){
+                        sum+=matr[i][j]
+                    }
+                }
+            }
+            return sum
+        }
+
+        function createMatrix(value1, value2) {
+            let matrix = []
+            for (let i = 0; i < value1; i++) {
+                matrix[i]=[]
+                for (let j = 0; j < value2; j++) {
+                    matrix[i][j] = parseInt(prompt("hãy nhập số vào ma trận vị trí " + i+'.'+ j))
+                }
+            }
+            return matrix
+        }
+        function maxMinMatrix(matrix){
+            let max=matrix[0][0];
+            let min=matrix[0][0];
+            for (let i=0;i<matrix.length;i++){
+                for (let j=1;j<matrix[i].length;j++){
+                    if (max<matrix[i][j]){
+                        max=matrix[i][j];
+                    }
+                    if (min>matrix[i][j]){
+                        min=matrix[i][j]
+                    }
+                }
+            }
+            return [max,min]
+        }
+
+
+        let m = parseInt(prompt("nhập số hàng cho ma trận "));
+        let n = parseInt(prompt("nhập số cột cho ma trận "));
+      console.log(createMatrix(m,n));
+      //console.log(sumEvenNumber(createMatrix(m,n)));
+        console.log(maxMinMatrix(createMatrix(m,n)))
+
+
+
+
+
+
+    </script>
+</body>
+</html>

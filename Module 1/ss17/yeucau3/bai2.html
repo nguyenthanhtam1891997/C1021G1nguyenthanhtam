@@ -20,20 +20,20 @@
         /// array.indexOf(123) tra ra gias tri vij cuar so 123 trong mang chir tim neu khong tim thay tra ve  -1
         if(m>n) {
             for (let i = 0; i < m; i++) {
-                if (a.indexOf(b[i]) == -1) {
+                if (a.indexOf(b[i]) == -1&& arr.indexOf(b[i])==-1) {
                     arr.push(b[i])
                 }
             }
         }else if(n>m){
             for (let i = 0; i < n; i++) {
-                if (b.indexOf(a[i]) == -1) {
+                if (b.indexOf(a[i]) == -1&& arr.indexOf(a[i])==-1) {
                    arr.push(a[i])
 
                 }
             }
         }
-        arr = new Set (arr)
-        arr =Array.from(arr)
+
+        arr.sort(function (a,b) {return a-b})
         console.log(a)
         console.log(b)
         console.log(arr)

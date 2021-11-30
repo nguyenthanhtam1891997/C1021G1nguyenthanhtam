@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cau 3</title>
+</head>
+<body>
+<script>
+        let month = parseInt(prompt(" hãy nhập tháng "))
+        let yer = parseInt(prompt("hãy nhập năm "))
+        let day =0;
+        if(yer % 4===0&&month===2){
+            day = 29;
+        }else {
+            switch (month) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    day = 31;
+                    break;
+                case 2:
+                    day = 28;
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    day = 30;
+                    break;
+
+            }
+        }
+        console.log("số ngày tương ứng là "+day);
+</script>
+</body>
+</html>
