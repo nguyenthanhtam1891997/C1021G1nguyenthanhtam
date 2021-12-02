@@ -27,13 +27,15 @@ public class Number_To_Letter {
                     tex = cht[hch - 1] + " " + ldv[hdv];
                     // System.out.println(tex);
                 }
-            } else if (num < 300) {
+            } else if (num < 1000) {
                 hdv = Integer.parseInt(String.valueOf(num2.charAt(2)));
                 hch = Integer.parseInt(String.valueOf(num2.charAt(1)));
                 htr = Integer.parseInt(String.valueOf(num2.charAt(0)));
                 if (hdv == 0) {
-                    tex = ldv[htr] + " hundred" + " " + cht[hch - 1];
-                } else {
+                    tex = ldv[htr] + " hundred" + " and " + cht[hch - 1];
+                } else if (hch==1){
+                    tex = ldv[htr] + " hundred" + " and "  + ten[(hch*10+hdv)-10];
+                }else {
                     tex = ldv[htr] + " hundred" + " " + cht[hch - 1] + " " + ldv[hdv];
                 }
             }
@@ -41,5 +43,6 @@ public class Number_To_Letter {
             System.out.println("phai nhập số dương");
         }
         System.out.println(tex);
+        System.out.println(hch);
     }
 }
