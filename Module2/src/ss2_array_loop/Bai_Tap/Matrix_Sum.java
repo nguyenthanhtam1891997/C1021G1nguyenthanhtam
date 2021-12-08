@@ -1,4 +1,4 @@
-package ss3_Method.Bai_Tap;
+package ss2_array_loop.Bai_Tap;
 import java.util.Scanner;
 
 public class Matrix_Sum {
