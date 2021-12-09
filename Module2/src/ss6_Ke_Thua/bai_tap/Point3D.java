@@ -1,5 +1,7 @@
 package ss6_Ke_Thua.bai_tap;
 
+import java.util.Arrays;
+
 public class Point3D extends Point2D {
     private float z=0.0f;
 
@@ -12,7 +14,25 @@ public class Point3D extends Point2D {
         this.z = z;
     }
 
-    public static void main(String[] args) {
-        Point2D point2D =new Point3D(5);
+    public float getZ() {
+        return z;
+    }
+
+    public void setZ(float z) {
+        this.z = z;
+    }
+    public void setXYZ(float x,float y,float z){
+        super.setXY(x,y);
+        this.z=z;
+    }
+    public float[] getXYZ(){
+        float[] array={super.getX(),super.getY(),this.z};
+        return array;
+    }
+
+    @Override
+    public String toString() {
+        return "Point3D" + Arrays.toString(getXYZ());
+
     }
 }
