@@ -7,7 +7,7 @@ import ss6_Ke_Thua.thuc_hanh.Square;
 
 public class ResizeableTest {
     public static void main(String[] args) {
-        
+
         Resizeable[] resizes=new Resizeable[3];
         resizes[0]=new Circle(2);
         resizes[1]=new Rectangle(5,2);
@@ -29,15 +29,16 @@ public class ResizeableTest {
         for (Resizeable resizer:resizes){
             if(resizer instanceof Circle){
                 resizer=(Circle) resizer;
-                resizer.resize(200);
+                resizer.resize(Math.floor(Math.random()*100));
                 System.out.println(((Circle) resizer).getArea());
-            }else if (resizer instanceof Rectangle){
-                resizer=(Rectangle) resizer;
-                resizer.resize(200);
-                System.out.println(((Rectangle) resizer).getArea());
             }else if (resizer instanceof Square){
                 resizer=(Square) resizer;
-                System.out.println();
+                resizer.resize(Math.floor(Math.random()*100));
+                System.out.println(((Square) resizer).getArea());
+            }else if (resizer instanceof Rectangle){
+                resizer=(Rectangle) resizer;
+                resizer.resize(Math.floor(Math.random()*100));
+                System.out.println(((Rectangle) resizer).getArea());
             }
         }
     }
