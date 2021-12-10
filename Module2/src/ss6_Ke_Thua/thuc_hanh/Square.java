@@ -1,6 +1,8 @@
 package ss6_Ke_Thua.thuc_hanh;
 
-public class Square extends Rectangle{
+
+
+public class Square extends Rectangle  {
     public Square() {
     }
     public Square(double side){
@@ -30,5 +32,8 @@ public class Square extends Rectangle{
                 +getSide()
                 +", which is a subclass of "
                 +super.toString();
+    }
+    public void resize(double percent){
+
     }
 }
