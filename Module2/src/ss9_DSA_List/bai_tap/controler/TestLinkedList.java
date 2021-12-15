@@ -6,7 +6,7 @@ import ss9_DSA_List.bai_tap.service.MyLinkedList;
 public class TestLinkedList {
     public static void main(String[] args) {
 
-        MyLinkedList<Student> studentMyLinkedList=new MyLinkedList<>();
+        MyLinkedList<Student> studentMyLinkedList=new MyLinkedList<Student>();
         Student student1=new Student(1,"hung");
         Student student2=new Student(2,"kim");
         Student student3=new Student(3,"lan");

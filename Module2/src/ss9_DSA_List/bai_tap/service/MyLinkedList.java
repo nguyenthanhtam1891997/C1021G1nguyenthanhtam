@@ -1,5 +1,7 @@
 package ss9_DSA_List.bai_tap.service;
 
+import ss9_DSA_List.bai_tap.model.Student;
+
 public class MyLinkedList<E> {
     private class Node{
         private Node next;
