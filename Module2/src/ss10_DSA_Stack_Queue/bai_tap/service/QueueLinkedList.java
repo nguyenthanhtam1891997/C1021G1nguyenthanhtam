@@ -28,8 +28,8 @@ public class QueueLinkedList {
 
         }else {
             this.rear.link = temp;
-            rear = temp;
             temp.link=front;
+            rear = temp;
 
         }
 
@@ -58,7 +58,7 @@ public class QueueLinkedList {
         if (front == null) {
             System.out.println("null");
         } else {
-            for (int i=0;i<nunNode;i++){
+            for (int i=0;i<nunNode+1;i++){
                 System.out.println(temp.data);
                 temp = temp.link;
             }

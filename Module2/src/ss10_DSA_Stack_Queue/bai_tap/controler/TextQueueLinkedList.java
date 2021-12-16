@@ -10,10 +10,10 @@ public class TextQueueLinkedList {
         textQueue.enQueue(3);
         textQueue.enQueue(2);
         textQueue.display();
-        textQueue.deQueue();
-        textQueue.deQueue();
-        System.out.println("/*/*/*/*/*/*/*/*/");
-        textQueue.display();
+//        textQueue.deQueue();
+//        textQueue.deQueue();
+//        System.out.println("/*/*/*/*/*/*/*/*/");
+//        textQueue.display();
 
 
     }
