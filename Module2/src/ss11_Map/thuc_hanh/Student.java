@@ -1,9 +1,12 @@
 package ss11_Map.thuc_hanh;
 
-public class Student {
+import java.util.Objects;
+
+public class Student implements Comparable<Student>{
     private String name;
     private  int age;
     private String address;
+  //  private String like;
 
     public Student() {
     }
@@ -12,6 +15,7 @@ public class Student {
         this.name = name;
         this.age = age;
         this.address = address;
+      //  this.like=like;
     }
 
     public String getName() {
@@ -38,6 +42,14 @@ public class Student {
         this.address = address;
     }
 
+//    public String getLike() {
+//        return like;
+//    }
+
+//    public void setLike(String like) {
+//        this.like = like;
+//    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -46,4 +58,22 @@ public class Student {
                 ", address='" + address + '\'' +
                 '}';
     }
+
+    @Override
+    public int compareTo(Student student) {
+        return this.name.compareTo(student.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(address);
+    }
+
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Student student = (Student) o;
+//        return Objects.equals(like, student.like);
+//    }
 }
