@@ -1,14 +1,14 @@
 package ss11_Map.bai_tap.controler;
 
 import ss11_Map.bai_tap.service.IProductService;
-import ss11_Map.bai_tap.service.product_IMPL.ProductServiceIMPL;
+import ss11_Map.bai_tap.service.product_IMPL.ProductServiceArrayIMPL;
 
 import java.util.Scanner;
 
-public class TestMainProduct {
+public class TestMainArrayProduct {
     public static void main(String[] args) {
         Scanner input=new Scanner(System.in);
-        IProductService iProductService=new ProductServiceIMPL();
+        IProductService iProductService=new ProductServiceArrayIMPL();
         do {
             System.out.println("__Product Menu__");
             System.out.println("1. Add Product");//Print list student

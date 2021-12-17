@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-public class ProductServiceIMPL implements IProductService {
+public class ProductServiceArrayIMPL implements IProductService {
   private static   List<Product> productList=new ArrayList<>();
   private static Scanner input =new Scanner(System.in);
   private static int id=1;
@@ -54,7 +54,7 @@ public class ProductServiceIMPL implements IProductService {
                     ChangeName(id);
                     break;
                 default:
-                    System.out.println("please choose again ");
+                    System.out.println("please choose again: ");
             }
         } while (choice > 3);
     }
