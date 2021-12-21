@@ -6,34 +6,59 @@ import java.util.Scanner;
 public class Triangle {
     public static void main(String[] args) throws IllegalTriangleException {
         Scanner input = new Scanner(System.in);
+        int a=0,b=0,c=0;
+        do {
+            try {
+                System.out.print(" nhập cạnh a:");
+                a = Integer.parseInt(input.nextLine());
+                if (a < 0) {
+                    throw new IllegalTriangleException("Không nhập số âm ");
+                }
+                break;
+            } catch (IllegalTriangleException e) {
+                System.out.println(e.getError());
+            } catch (NumberFormatException e) {
+                System.out.println(e.getMessage());
+            }
 
+        } while (true);
+        do {
+            try {
+                System.out.print(" nhập cạnh b:");
+                b = Integer.parseInt(input.nextLine());
+                if (b < 0) {
+                    throw new IllegalTriangleException("Không nhập số âm ");
+                }
+                break;
+            } catch (IllegalTriangleException e) {
+                System.out.println(e.getError());
+            } catch (NumberFormatException e) {
+                System.out.println(e.getMessage());
+            }
 
+        } while (true);
+        do {
+            try {
+                System.out.print(" nhập cạnh c:");
+                c = Integer.parseInt(input.nextLine());
+                if (c < 0) {
+                    throw new IllegalTriangleException("Không nhập số âm ");
+                }
+                break;
+            } catch (IllegalTriangleException e) {
+                System.out.println(e.getError());
+            } catch (NumberFormatException e) {
+                System.out.println(e.getMessage());
+            }
+
+        } while (true);
         try {
-
-            System.out.print(" nhập cạnh a:");
-            int a =Integer.parseInt(input.nextLine());
-            if (a < 0) {
-                throw new IllegalTriangleException("Không nhập số âm");
+            if ((a+b)<c||(a+c)<b||(b+c)<a){
+                throw new IllegalTriangleException("không được nhập 2 cạnh bé hơn cạnh thứ 3");
             }
-            System.out.print(" nhập cạnh b:");
-            int b = Integer.parseInt(input.nextLine());
-            if (b < 0) {
-                throw new IllegalTriangleException("Không nhập số âm");
-            }
-            System.out.print(" nhập canh c:");
-            int c = Integer.parseInt(input.nextLine());
-            if (c < 0) {
-                throw new IllegalTriangleException("Không nhập số âm");
-            }
-            if (a+b<c||b+c<a||a+c<b){
-                throw new IllegalTriangleException("Lỗi tổng 2 cạnh không lớn hơn cạnh còn lại ");
-            }
-        } catch (IllegalTriangleException e) {
+        }catch (IllegalTriangleException e){
             System.out.println(e.getError());
-        }catch (NumberFormatException e){
-            e.printStackTrace();
-        }catch (InputMismatchException e1){
-            e1.printStackTrace();
         }
+
     }
 }

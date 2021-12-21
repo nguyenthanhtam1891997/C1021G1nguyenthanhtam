@@ -1,7 +1,7 @@
 package ss14_Xu_Li_Ngoi_Le_Debug.bai_tap;
 
 public class IllegalTriangleException extends Exception{
-  String error ;
+ private String error ;
 
     public IllegalTriangleException( String error) {
         super();

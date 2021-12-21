@@ -11,13 +11,11 @@ public class CalculationExample {
 
             int x=Integer.parseInt(input.nextLine());
             System.out.println("Hãy nhập y: ");
-            int y = Integer.parseInt(input.nextLine());
+            int y = input.nextInt();
             CalculationExample calc =new CalculationExample();
             calc.calculate(x,y);
-        }catch (NumberFormatException e){
-            System.out.println("Đây là số thực hãy nhập số nguyên: ");
         }catch (InputMismatchException e){
-            System.out.println("Hãy nhập số ");
+            e.printStackTrace();
         }
     }
     private void  calculate(int x,int y){
