@@ -2,7 +2,7 @@ package ss16_IO_Binary_File.bai_tap.model;
 
 import java.io.Serializable;
 
-public class Product implements Serializable {
+public class Product implements Serializable,Comparable<Product> {
     private int id;
     private String name;
     private String producer;
@@ -66,5 +66,10 @@ public class Product implements Serializable {
                 ", price=" + price +
                 ", other='" + other + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Product o) {
+        return this.getId()-o.getId();
     }
 }

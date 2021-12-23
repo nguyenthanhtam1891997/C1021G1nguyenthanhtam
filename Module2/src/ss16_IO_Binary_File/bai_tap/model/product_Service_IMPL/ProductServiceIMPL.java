@@ -5,6 +5,7 @@ import ss16_IO_Binary_File.bai_tap.service.IProductService;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,7 +16,8 @@ public class ProductServiceIMPL implements IProductService {
     @Override
     public void addProduct() {
         try {
-            System.out.print("Enter id: ");
+
+             System.out.print("Enter id: ");
             int id=Integer.parseInt(input.nextLine());
             System.out.print("Enter name:");
             String name=input.nextLine();
@@ -26,9 +28,9 @@ public class ProductServiceIMPL implements IProductService {
             System.out.print("Enter other:");
             String other=input.nextLine();
             Product product=new Product(id,name,producer,price,other);
+            productList=readProduct();
             productList.add(product);
-            writeProduct();
-            System.out.println(productList);
+            writeProduct(productList);
         }catch (NumberFormatException e){
             System.out.println("You number is not true");
         }
@@ -36,8 +38,8 @@ public class ProductServiceIMPL implements IProductService {
 
     @Override
     public void printList() {
-        List<Product> productList=readProduct();
-        for (Product product:productList){
+        List<Product> productList1=readProduct();
+        for (Product product:productList1){
             System.out.println(product);
         }
 
@@ -60,11 +62,11 @@ public class ProductServiceIMPL implements IProductService {
         }
     }
 
-    private static void writeProduct(){
+    private static void writeProduct(List<Product> list){
         try {
             FileOutputStream fileStream=new FileOutputStream(LINK_PRODUCT);
             ObjectOutputStream objectStream=new ObjectOutputStream(fileStream);
-            objectStream.writeObject(productList);
+            objectStream.writeObject(list);
             objectStream.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -73,19 +75,22 @@ public class ProductServiceIMPL implements IProductService {
         }
     }
     private static List<Product> readProduct(){
-        List<Product> productList=new ArrayList<>();
+        List<Product> productList1=new ArrayList<>();
         try {
             FileInputStream inputStream=new FileInputStream(LINK_PRODUCT);
             ObjectInputStream objectInputStream=new ObjectInputStream(inputStream);
-            productList=(List<Product>) objectInputStream.readObject();
+            productList1=(List<Product>) objectInputStream.readObject();
             objectInputStream.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+                e.printStackTrace();
+        }catch (EOFException e){
+            System.out.println("file đang rổng ");
+        } catch (ClassNotFoundException e){
+                e.printStackTrace();
+        } catch (IOException e){
+                e.printStackTrace();
         }
-        return productList;
+        Collections.sort(productList1);
+        return productList1;
     }
 }
