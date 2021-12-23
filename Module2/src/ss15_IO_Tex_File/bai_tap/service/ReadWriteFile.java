@@ -19,16 +19,17 @@ public class ReadWriteFile {
              while ((text= fileReader.read())!=-1){
                  result += (char) text;//chưa đặt char
              }
+             fileReader.close();
         } catch (FileNotFoundException e){
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }finally {
-            try {
-                fileReader.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                fileReader.close();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
         }
         return result;
     }
