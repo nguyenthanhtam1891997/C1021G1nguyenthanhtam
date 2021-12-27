@@ -1,4 +1,4 @@
-package bai_Tap_Them.bai3.service.cadres_Service_IMPL;
+package bai_Tap_Them.bai3.service.impl;
 
 import bai_Tap_Them.bai3.model.Cadres;
 import bai_Tap_Them.bai3.service.ICadresService;

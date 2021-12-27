@@ -1,0 +1,34 @@
+package caseStudy.model.facility;
+
+public class Room extends FuramaFacility{
+    private String freeService;
+
+    public Room(String freeService) {
+        this.freeService = freeService;
+    }
+
+    public Room(String nameService, double areaUsable, double costsRental, int maxPeople, String typeRental, String freeService) {
+        super(nameService, areaUsable, costsRental, maxPeople, typeRental);
+        this.freeService = freeService;
+    }
+
+    public String getFreeService() {
+        return freeService;
+    }
+
+    public void setFreeService(String freeService) {
+        this.freeService = freeService;
+    }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "freeService='" + freeService + '\'' +super.toString()+
+                '}';
+    }
+
+    @Override
+    public String maintenance() {
+        return null;
+    }
+}

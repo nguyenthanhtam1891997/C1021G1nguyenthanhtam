@@ -1,6 +1,6 @@
 package ss16_IO_Binary_File.bai_tap.controler;
 
-import ss16_IO_Binary_File.bai_tap.model.product_Service_IMPL.ProductServiceIMPL;
+import ss16_IO_Binary_File.bai_tap.service.impl.ProductServiceIMPL;
 import ss16_IO_Binary_File.bai_tap.service.IProductService;
 
 import java.util.Scanner;

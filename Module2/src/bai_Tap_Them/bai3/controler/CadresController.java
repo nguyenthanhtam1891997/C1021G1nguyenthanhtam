@@ -1,7 +1,7 @@
 package bai_Tap_Them.bai3.controler;
 
 import bai_Tap_Them.bai3.service.ICadresService;
-import bai_Tap_Them.bai3.service.cadres_Service_IMPL.CadresServiceIMPL;
+import bai_Tap_Them.bai3.service.impl.CadresServiceIMPL;
 
 import java.util.Scanner;
 

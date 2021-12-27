@@ -3,7 +3,7 @@ package ss17_String_Regex.bai_tap;
 import java.util.Scanner;
 
 public class Validate {
-    public static final String ACCOUNT="(C|A|P).*[0-9]{4}(G|H|I|K|L|M).*";
+    public static final String ACCOUNT="[CAP][0-9]{4}[GHIKLM]$";
 
     public static void main(String[] args) {
         while (true){

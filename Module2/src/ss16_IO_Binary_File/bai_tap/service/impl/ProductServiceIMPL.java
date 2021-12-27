@@ -1,4 +1,4 @@
-package ss16_IO_Binary_File.bai_tap.model.product_Service_IMPL;
+package ss16_IO_Binary_File.bai_tap.service.impl;
 
 import ss16_IO_Binary_File.bai_tap.model.Product;
 import ss16_IO_Binary_File.bai_tap.service.IProductService;
