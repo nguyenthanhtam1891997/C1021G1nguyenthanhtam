@@ -6,12 +6,12 @@ public abstract class FuramaFacility {
     private double areaUsable;
     private double costsRental;
     private int maxPeople;
-    private int typeRental;
+    private String typeRental;
 
     public FuramaFacility() {
     }
 
-    public FuramaFacility(String idFacility,String nameService, double areaUsable, double costsRental, int maxPeople, int typeRental) {
+    public FuramaFacility(String idFacility,String nameService, double areaUsable, double costsRental, int maxPeople, String typeRental) {
        this.idFacility=idFacility;
         this.nameService = nameService;
         this.areaUsable = areaUsable;
@@ -52,11 +52,11 @@ public abstract class FuramaFacility {
         this.maxPeople = maxPeople;
     }
 
-    public int getTypeRental() {
+    public String getTypeRental() {
         return typeRental;
     }
 
-    public void setTypeRental(int typeRental) {
+    public void setTypeRental(String typeRental) {
         this.typeRental = typeRental;
     }
 

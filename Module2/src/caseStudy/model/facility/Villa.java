@@ -1,6 +1,6 @@
 package caseStudy.model.facility;
 
-public class Villa extends FuramaFacility{
+public class Villa extends FuramaFacility {
     private String standardRoom;
     private double areaPool;
     private int numberFloors;
@@ -9,7 +9,7 @@ public class Villa extends FuramaFacility{
     }
 
     public Villa(String idFacility,String nameService, double areaUsable, double costsRental,
-                 int maxPeople, int typeRental, String standardRoom,
+                 int maxPeople, String typeRental, String standardRoom,
                  double areaPool, int numberFloors) {
         super(idFacility,nameService, areaUsable, costsRental, maxPeople, typeRental);
         this.standardRoom = standardRoom;
@@ -60,4 +60,9 @@ public class Villa extends FuramaFacility{
     public String maintenance() {
         return null;
     }
+
+
+
+
+
 }

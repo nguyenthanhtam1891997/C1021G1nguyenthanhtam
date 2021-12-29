@@ -1,6 +1,8 @@
 package caseStudy.controler;
 
 import caseStudy.service.Service;
+import caseStudy.service.facility.FacilityService;
+import caseStudy.service.facility.impl.FacilityServiceImpl;
 import caseStudy.service.person.customer.impl.CustomerServiceImpl;
 import caseStudy.service.person.employee.impl.EmployeeServiceImpl;
 
@@ -125,6 +127,7 @@ public class FuramaController {
         }while (true);
     }
     public static void displayFacility(){
+        FacilityService facilityService=new FacilityServiceImpl();
         do {
             System.out.println("__Facility Menu__");
             System.out.println("1. Display list Facility");
@@ -140,10 +143,13 @@ public class FuramaController {
             }
             switch (choice){
                 case 1:
+                    facilityService.display();
                     break;
                 case 2:
+                    addNewFacility();
                     break;
                 case 3:
+                    facilityService.displayError();
                     break;
                 case 4:
                     displayMaiMenu();
@@ -193,5 +199,35 @@ public class FuramaController {
                     break;
             }
         }while (true);
+    }
+
+    private static void addNewFacility() {
+        FacilityService facilityService=new FacilityServiceImpl();
+        do {
+            System.out.println("__ADD Facility Menu__");
+            System.out.println("1. Add New Villa");
+            System.out.println("2. Add New House");
+            System.out.println("3. Add New Room");
+            System.out.println("4. Return Facility menu");
+            try {
+                choice = Integer.parseInt(input.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("You enter not a number enter again");
+            }
+            switch (choice) {
+                case 1:
+                    facilityService.addNewVilla();
+                    break;
+                case 2:
+                    facilityService.addNewHouse();
+                    break;
+                case 3:
+                    facilityService.addNewRoom();
+                    break;
+                case 4:
+                    displayFacility();
+                    break;
+            }
+        } while (true);
     }
 }

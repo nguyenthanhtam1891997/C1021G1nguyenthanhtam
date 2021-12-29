@@ -1,6 +1,6 @@
 package caseStudy.model.facility;
 
-public class Room extends FuramaFacility{
+public class Room extends FuramaFacility {
     private String freeService;
 
     public Room(String freeService) {
@@ -8,7 +8,7 @@ public class Room extends FuramaFacility{
     }
 
     public Room(String idFacility,String nameService, double areaUsable, double costsRental,
-                int maxPeople, int typeRental, String freeService) {
+                int maxPeople, String typeRental, String freeService) {
         super(idFacility,nameService, areaUsable, costsRental, maxPeople, typeRental);
         this.freeService = freeService;
     }
@@ -32,4 +32,6 @@ public class Room extends FuramaFacility{
     public String maintenance() {
         return null;
     }
+
+
 }
