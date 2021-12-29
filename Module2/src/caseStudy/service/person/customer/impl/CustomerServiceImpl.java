@@ -10,7 +10,7 @@ import java.util.*;
 
 public class CustomerServiceImpl implements CustomerService {
     private static List<Customer> customerList=new LinkedList<>();
-    public CustomerServiceImpl(){
+    {
         customerList=readCustomer();
     }
     private static Scanner input=new Scanner(System.in);
@@ -43,16 +43,83 @@ public class CustomerServiceImpl implements CustomerService {
         customerList=readCustomer();
         customerList.add(customer);
         Collections.sort(customerList);
-        writeFile(customer);
+        writeFile();
     }
 
     @Override
     public void edit() {
+        boolean check=false;
+        do {
+            try {
+                System.out.print("Enter id you wan to change:");
+                String idFind=input.nextLine();
+                for (int i=0;i<customerList.size();i++){
+                    if (customerList.get(i).getId().equals(idFind)){
+                        System.out.print("Enter id:");
+                        String id = input.nextLine();
+                        System.out.print("Enter name:");
+                        String name = input.nextLine();
+                        String dayOfBirth = enterDayOfBirth();
+                        String idCitizen = enterIdCitizen();
+                        String phoneNumber = enterPhoneNumber();
+                        String email = enterEmail();
+                        String typeCustomer=enterTypeCustomer();
+                        System.out.println("Enter address");
+                        String addressService=input.nextLine();
+                        Customer customer=new Customer(id,name,dayOfBirth,idCitizen,phoneNumber,email,typeCustomer,addressService);
+                        customerList=readCustomer();
+                        customerList.set(i,customer);
+                        Collections.sort(customerList);
+                        writeFile();
+                        check=false;
+                        break;
+                    }else {
+                        check=true;
+                    }
+                }
+                if (check){
+                    System.out.println("not find");
+                }else {
+                    break;
+                }
+            }catch (ArrayIndexOutOfBoundsException e){
+                System.out.println("vượt quá số lượng phần tử");
+            }catch (NumberFormatException e){
+                e.printStackTrace();
+            }
+        }while (true);
 
     }
 
     @Override
     public void delete() {
+        boolean check=false;
+        do {
+            try {
+                System.out.println("Enter id you wan to delete:");
+                String idDelete=input.nextLine();
+                for (int i=0;i<customerList.size();i++){
+                    if (customerList.get(i).getId().equals(idDelete)){
+                        customerList.remove(i);
+                        Collections.sort(customerList);
+                        writeFile();
+                        check=false;
+                        break;
+                    }else {
+                        check=true;
+                    }
+                }
+                if (check){
+                    System.out.println("not find");
+                }else {
+                    break;
+                }
+            }catch (ArrayIndexOutOfBoundsException e){
+                System.out.println("vượt quá số phần tử ");
+            }catch (NumberFormatException | IndexOutOfBoundsException | ConcurrentModificationException e){
+                System.out.println("loi không có phần tử trong mãng ");
+            }
+        }while (true);
 
     }
     private String enterEmail() {
@@ -182,7 +249,7 @@ public class CustomerServiceImpl implements CustomerService {
             while ((line=bufferedReader.readLine())!=null){
                 temp=line.split(",");
                 Customer=new Customer(temp[0],temp[1],temp[2],temp[3],
-                        temp[4],temp[5], temp[6],temp[7],Double.parseDouble(temp[8]),temp[9] );
+                        temp[4],temp[5], temp[6],temp[7]);
                 CustomerList1.add(Customer);
             }
             bufferedReader.close();
@@ -190,16 +257,21 @@ public class CustomerServiceImpl implements CustomerService {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        }catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("mãng đang rỗng ");
         }
         return CustomerList1;
     }
-    private void writeFile(Customer Customer){
+    private void writeFile(){
         try {
-            FileWriter fileWriter=new FileWriter(FILE_CUSTOMER,true);
+            FileWriter fileWriter=new FileWriter(FILE_CUSTOMER);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            bufferedWriter.write(Customer.getId()+","+Customer.getName()+","+Customer.getDayOfBirth()+","+Customer.getIdCitizen()
-                    +","+Customer.getPhoneNumber()+","+Customer.getEmail()+","+ Customer.getTypeCustomer()+","+Customer.getAddressService());
-            bufferedWriter.newLine();
+            String line=null;
+            for (Customer customer:customerList){
+                line= customer.getId()+","+customer.getName()+","+customer.getDayOfBirth()+","+customer.getIdCitizen()
+                        +","+customer.getPhoneNumber()+","+customer.getEmail()+","+ customer.getTypeCustomer()+","+customer.getAddressService()+"\n";
+                bufferedWriter.write(line);
+            }
             bufferedWriter.close();
         } catch (IOException e) {
             e.printStackTrace();

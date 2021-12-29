@@ -96,7 +96,8 @@ public class FuramaController {
             System.out.println("1. Display list Customer");
             System.out.println("2. Add new Customer");
             System.out.println("3. Edit Customer");
-            System.out.println("4. Return main menu");
+            System.out.println("4. Delete Customer");
+            System.out.println("5. Return main menu");
             System.out.print("Enter you choice:");
 
             try {
@@ -115,6 +116,9 @@ public class FuramaController {
                     customerService.edit();
                     break;
                 case 4:
+                    customerService.delete();
+                    break;
+                case 5:
                    displayMaiMenu();
                     break;
             }
@@ -125,7 +129,7 @@ public class FuramaController {
             System.out.println("__Facility Menu__");
             System.out.println("1. Display list Facility");
             System.out.println("2. Add new Facility");
-            System.out.println("3. Edit Facility");
+            System.out.println("3. Display list facility maintenance");
             System.out.println("4. Return main menu");
             System.out.print("Enter you choice:");
 
@@ -135,6 +139,12 @@ public class FuramaController {
                 System.out.println("You enter not a number enter again");
             }
             switch (choice){
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
                 case 4:
                     displayMaiMenu();
                     break;

@@ -7,8 +7,9 @@ public class Room extends FuramaFacility{
         this.freeService = freeService;
     }
 
-    public Room(String nameService, double areaUsable, double costsRental, int maxPeople, String typeRental, String freeService) {
-        super(nameService, areaUsable, costsRental, maxPeople, typeRental);
+    public Room(String idFacility,String nameService, double areaUsable, double costsRental,
+                int maxPeople, int typeRental, String freeService) {
+        super(idFacility,nameService, areaUsable, costsRental, maxPeople, typeRental);
         this.freeService = freeService;
     }
 
@@ -22,8 +23,8 @@ public class Room extends FuramaFacility{
 
     @Override
     public String toString() {
-        return "Room{" +
-                "freeService='" + freeService + '\'' +super.toString()+
+        return "Room{" +super.toString()+
+                "freeService='" + freeService + '\'' +
                 '}';
     }
 

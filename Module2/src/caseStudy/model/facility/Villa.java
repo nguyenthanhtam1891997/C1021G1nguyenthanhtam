@@ -8,8 +8,10 @@ public class Villa extends FuramaFacility{
     public Villa() {
     }
 
-    public Villa(String nameService, double areaUsable, double costsRental, int maxPeople, String typeRental, String standardRoom, double areaPool, int numberFloors) {
-        super(nameService, areaUsable, costsRental, maxPeople, typeRental);
+    public Villa(String idFacility,String nameService, double areaUsable, double costsRental,
+                 int maxPeople, int typeRental, String standardRoom,
+                 double areaPool, int numberFloors) {
+        super(idFacility,nameService, areaUsable, costsRental, maxPeople, typeRental);
         this.standardRoom = standardRoom;
         this.areaPool = areaPool;
         this.numberFloors = numberFloors;
@@ -47,10 +49,10 @@ public class Villa extends FuramaFacility{
 
     @Override
     public String toString() {
-        return "Villa{" +
+        return "Villa{" +super.toString()+
                 "standardRoom='" + standardRoom + '\'' +
                 ", areaPool=" + areaPool +
-                ", numberFloors=" + numberFloors +super.toString()+
+                ", numberFloors=" + numberFloors +
                 '}';
     }
 

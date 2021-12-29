@@ -10,7 +10,7 @@ import java.util.*;
 
 public class EmployeeServiceImpl implements EmployeeService {
 private static List<Employee> employeeList=new ArrayList<>();
-public EmployeeServiceImpl(){
+ {
     employeeList=readEmploy();
 }
 private static Scanner input=new Scanner(System.in);
@@ -50,58 +50,90 @@ private static final String FILE_EMPLOY="D:\\codegym\\C1021G1nguyenthanhtam\\C10
 
     @Override
     public void edit() {
-        try {
-            System.out.print("Enter id you want to change:");
-            int idFind= Integer.parseInt(input.nextLine())+1;
-            if (idFind>-1&&idFind<employeeList.size()){
-                System.out.print("Enter id:");
-                String id = input.nextLine();
-                System.out.print("Enter name:");
-                String name = input.nextLine();
-                String dayOfBirth = enterDayOfBirth();
-                String idCitizen = enterIdCitizen();
-                String phoneNumber = enterPhoneNumber();
-                String email = enterEmail();
-                String lever = enterLever();
-                String position = enterPosition();
-                System.out.print("Enter salary:");
-                double salary = Double.parseDouble(input.nextLine());
-                String gender = enterGender();
-                Employee employee = new Employee(id, name, dayOfBirth, idCitizen, phoneNumber, email, lever, position, salary, gender);
-                employeeList = readEmploy();
-                employeeList.set(idFind,employee);
-                Collections.sort(employeeList);
-                writeFile();
+        boolean check = false;
+        do {
+
+            try {
+                System.out.print("Enter id you want to change:");
+                String idFind=input.nextLine();
+
+                for (int i=0;i<employeeList.size();i++){
+                    if (employeeList.get(i).getId().equals(idFind)){
+                        System.out.print("Enter id:");
+                        String id = input.nextLine();
+                        System.out.print("Enter name:");
+                        String name = input.nextLine();
+                        String dayOfBirth = enterDayOfBirth();
+                        String idCitizen = enterIdCitizen();
+                        String phoneNumber = enterPhoneNumber();
+                        String email = enterEmail();
+                        String lever = enterLever();
+                        String position = enterPosition();
+                        System.out.print("Enter salary:");
+                        double salary = Double.parseDouble(input.nextLine());
+                        String gender = enterGender();
+                        Employee employee = new Employee(id, name, dayOfBirth, idCitizen, phoneNumber, email, lever, position, salary, gender);
+                        employeeList = readEmploy();
+                        employeeList.set(i, employee);
+                        Collections.sort(employeeList);
+                        writeFile();
+                        check=false;
+                        break;
+                    }else {
+                        check=true;
+                    }
+                }
+                if (check){
+                    System.out.println("not find");
+                }else {
+                    break;
+                }
+            }catch (ArrayIndexOutOfBoundsException e){
+                System.out.println("vượt quá số lượng phần tử ");
+
+            }catch (NumberFormatException e){
+                e.printStackTrace();
+
             }
-        }catch (ArrayIndexOutOfBoundsException e){
-            System.out.println("vượt quá số lượng phần tử ");
-        }catch (NumberFormatException e){
-            e.printStackTrace();
-        }
+        }while (true);
+
     }
 
     @Override
     public void delete() {
-        try {
-            System.out.print("Enter id you want to delete:");
-            String idDelete=input.nextLine();
-            for (Employee employee:employeeList){
-                if (employee.getId().equals(idDelete)){
-                    employeeList.remove(employee);
-                    Collections.sort(employeeList);
-                    writeFile();
-                }
-            }
+                boolean check=false;
+                do {
+                    try {
+
+                        System.out.print("Enter id you want to delete:");
+                        String idDelete = input.nextLine();
+
+                        for (int i=0;i<employeeList.size();i++) {
+                            if (employeeList.get(i).getId().equals(idDelete)) {
+                                employeeList.remove(i);
+                                Collections.sort(employeeList);
+                                writeFile();
+                                check=false;
+                                break;
+
+                            }else {
+                                check=true;
+                            }
+                        }
+                        if (check){
+                            System.out.println("not find");
+                        }else {
+                            break;
+                        }
+                    } catch (ArrayIndexOutOfBoundsException e) {
+                        System.out.println("vượt quá số lượng phần tử ");
 
 
-        }catch (ArrayIndexOutOfBoundsException e){
-            System.out.println("vượt quá số lượng phần tử ");
-        }catch (NumberFormatException | IndexOutOfBoundsException | ConcurrentModificationException e){
-            System.out.println("loi dã duoxj khac phục");
-        }
+                    } catch (NumberFormatException | IndexOutOfBoundsException  e) {
+                        System.out.println("loi dã duoxj khac phục");
 
-
-
+                    }
+                }while (true);
 
     }
 
@@ -312,7 +344,6 @@ private static final String FILE_EMPLOY="D:\\codegym\\C1021G1nguyenthanhtam\\C10
                         +employee.getSalary()+","+employee.getGender()+"\n";
                 bufferedWriter.write(line);
             }
-            bufferedWriter.newLine();
             bufferedWriter.close();
         } catch (IOException e) {
             e.printStackTrace();

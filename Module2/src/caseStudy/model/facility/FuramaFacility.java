@@ -1,16 +1,18 @@
 package caseStudy.model.facility;
 
 public abstract class FuramaFacility {
+    private String idFacility;
     private String nameService;
     private double areaUsable;
     private double costsRental;
     private int maxPeople;
-    private String typeRental;
+    private int typeRental;
 
     public FuramaFacility() {
     }
 
-    public FuramaFacility(String nameService, double areaUsable, double costsRental, int maxPeople, String typeRental) {
+    public FuramaFacility(String idFacility,String nameService, double areaUsable, double costsRental, int maxPeople, int typeRental) {
+       this.idFacility=idFacility;
         this.nameService = nameService;
         this.areaUsable = areaUsable;
         this.costsRental = costsRental;
@@ -50,23 +52,31 @@ public abstract class FuramaFacility {
         this.maxPeople = maxPeople;
     }
 
-    public String getTypeRental() {
+    public int getTypeRental() {
         return typeRental;
     }
 
-    public void setTypeRental(String typeRental) {
+    public void setTypeRental(int typeRental) {
         this.typeRental = typeRental;
+    }
+
+    public String getIdFacility() {
+        return idFacility;
+    }
+
+    public void setIdFacility(String idFacility) {
+        this.idFacility = idFacility;
     }
 
     @Override
     public String toString() {
-        return "FuramaFacility{" +
+        return "FuramaFacility" +
                 "nameService='" + nameService + '\'' +
                 ", areaUsable=" + areaUsable +
                 ", costsRental=" + costsRental +
                 ", maxPeople=" + maxPeople +
-                ", typeRental='" + typeRental + '\'' +
-                '}';
+                ", typeRental='" + typeRental + '\''
+                ;
     }
 
     public abstract String maintenance();
