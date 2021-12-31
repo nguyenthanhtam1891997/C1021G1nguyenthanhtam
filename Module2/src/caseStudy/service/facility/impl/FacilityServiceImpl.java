@@ -23,9 +23,9 @@ public class FacilityServiceImpl implements FacilityService {
     private static final String NAME_VILA ="(VILA)[0-9]{1,2}";
     private static final String NAME_ROOM ="(ROOM)[0-9]{1,2}";
     private static final String NAME_HOME ="(HOME)[0-9]{1,2}";
-    private static final String VILA_FILE ="D:\\codegym\\C1021G1nguyenthanhtam\\C1021G1nguyenthanhtam\\Module2\\src\\caseStudy\\model\\data\\vilaFile.csv";
-    private static final String ROOM_FILE ="D:\\codegym\\C1021G1nguyenthanhtam\\C1021G1nguyenthanhtam\\Module2\\src\\caseStudy\\model\\data\\roomFile.csv";
-    private static final String HOME_FILE ="D:\\codegym\\C1021G1nguyenthanhtam\\C1021G1nguyenthanhtam\\Module2\\src\\caseStudy\\model\\data\\houseFile.csv";
+    public static final String VILA_FILE ="D:\\codegym\\C1021G1nguyenthanhtam\\C1021G1nguyenthanhtam\\Module2\\src\\caseStudy\\model\\data\\vilaFile.csv";
+    public static final String ROOM_FILE ="D:\\codegym\\C1021G1nguyenthanhtam\\C1021G1nguyenthanhtam\\Module2\\src\\caseStudy\\model\\data\\roomFile.csv";
+    public static final String HOME_FILE ="D:\\codegym\\C1021G1nguyenthanhtam\\C1021G1nguyenthanhtam\\Module2\\src\\caseStudy\\model\\data\\houseFile.csv";
     private String idFacility;
     static {
         vilaList=readFurama(VILA_FILE);
@@ -55,7 +55,6 @@ public class FacilityServiceImpl implements FacilityService {
             System.out.println("4. DISPLAY ALL");
             System.out.print("Enter you choice:");
             try {
-                System.out.print("Enter you choice:");
                 choice = Integer.parseInt(input.nextLine());
                 switch (choice) {
                     case 1:
@@ -73,7 +72,7 @@ public class FacilityServiceImpl implements FacilityService {
                         displayRoom();
                         break;
                     default:
-                        System.out.println("");
+                        System.out.println("Choice number is not true");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("số không đúng định dạng");
@@ -123,10 +122,10 @@ public class FacilityServiceImpl implements FacilityService {
         String typeRoom=enterStandardRoom();
         double areaPool=enterAreaUsable();
         FuramaFacility vila=new Villa(idFacility,name,areaUsable,costsRental,maxPeople,typeRental,typeRoom,areaPool,floors);
+        vilaList=readFurama(VILA_FILE);
         vilaList.add(vila);
         facilityList.put(vila,1);
-
-        writeFile(VILA_FILE);
+        writeFileVila();
     }
 
     @Override
@@ -143,8 +142,7 @@ public class FacilityServiceImpl implements FacilityService {
         FuramaFacility house=new House(idFacility,name,areaUsable,costsRental,maxPeople,typeRental,typeRoom,floors);
         houseList.add(house);
         facilityList.put(house,1);
-
-        writeFile(HOME_FILE);
+        writeFileHouse();
     }
 
     @Override
@@ -160,7 +158,7 @@ public class FacilityServiceImpl implements FacilityService {
 
         roomList.add(room);
         facilityList.put(room, 1);
-        writeFile(ROOM_FILE);
+        writeFileRoom();
     }
     private String enterIdFacility(){
         String idFacility=null;
@@ -233,9 +231,9 @@ public class FacilityServiceImpl implements FacilityService {
         do {
             try {
                 check=false;
-                System.out.println("Enter Area");
+                System.out.print("Enter Area:");
                 area=Double.parseDouble(input.nextLine());
-                if (area>30){
+                if (area<30){
                     check=true;
                     System.out.println("you area is not true ");
                 }
@@ -251,7 +249,7 @@ public class FacilityServiceImpl implements FacilityService {
         do {
             try {
                 check=false;
-                System.out.println("Enter money");
+                System.out.print("Enter money");
                 money=Double.parseDouble(input.nextLine());
             }catch (NumberFormatException e){
                 System.out.println("só không đúng định dạng");
@@ -267,7 +265,7 @@ public class FacilityServiceImpl implements FacilityService {
         do {
             try {
                 check=false;
-                System.out.println("Enter people");
+                System.out.print("Enter people");
                 peoples=Integer.parseInt(input.nextLine());
             }catch (NumberFormatException e){
                 System.out.println("số không dúng định dạnh");
@@ -282,7 +280,7 @@ public class FacilityServiceImpl implements FacilityService {
         do {
             try {
                 check=false;
-                System.out.println("Enter floor");
+                System.out.print("Enter floor");
                 floor=Integer.parseInt(input.nextLine());
             }catch (NumberFormatException e){
                 System.out.println("số không dúng định dạnh");
@@ -376,13 +374,13 @@ public class FacilityServiceImpl implements FacilityService {
                 choice = Integer.parseInt(input.nextLine());
                 switch (choice) {
                     case 1:
-                        freeService = "VIP";
+                        freeService = "Water";
                         break;
                     case 2:
-                        freeService = "NORMAL";
+                        freeService = "CONDOM";
                         break;
                     case 3:
-                        freeService = "STANDARD";
+                        freeService = "Wish Towel";
                         break;
                     default:
                         System.out.println("you choice is not true");
@@ -399,12 +397,12 @@ public class FacilityServiceImpl implements FacilityService {
     //    String nameService, double areaUsable, double costsRental,
 //    int maxPeople, String typeRental, String standardRoom,
 //    double areaPool, int numberFloors
-    private void writeFile(String nameFile){
+
+    public static void writeFileVila(){
         try {
-            FileWriter fileWriter=new FileWriter(nameFile);
+            FileWriter   fileWriter = new FileWriter(VILA_FILE);
             BufferedWriter bufferedWriter=new BufferedWriter(fileWriter);
             String line=null;
-
             for (Map.Entry<FuramaFacility,Integer> entry: facilityList.entrySet()){
                 if (entry.getKey() instanceof Villa){
                     Villa villa=(Villa) entry.getKey();
@@ -412,13 +410,39 @@ public class FacilityServiceImpl implements FacilityService {
                             villa.getCostsRental()+","+villa.getMaxPeople()+","+villa.getTypeRental()+","+
                             villa.getStandardRoom()+","+villa.getAreaPool()+","+villa.getNumberFloors()+"\n";
                     bufferedWriter.write(line);
-                }else if (entry.getKey() instanceof House){
+                }
+            }
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void writeFileHouse(){
+        try {
+            FileWriter   fileWriter = new FileWriter(HOME_FILE);
+            BufferedWriter bufferedWriter=new BufferedWriter(fileWriter);
+            String line=null;
+            for (Map.Entry<FuramaFacility,Integer> entry: facilityList.entrySet()){
+                if (entry.getKey() instanceof House){
                     House house =(House) entry.getKey();
                     line=house.getIdFacility()+","+house.getNameService()+","+house.getAreaUsable()+","+
                             house.getCostsRental()+","+house.getMaxPeople()+","+house.getTypeRental()+","+
                             house.getStandardRoom()+","+house.getNumberFloors()+"\n";
                     bufferedWriter.write(line);
-                }else if (entry.getKey() instanceof Room){
+                }
+            }
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void writeFileRoom(){
+        try {
+            FileWriter   fileWriter = new FileWriter(ROOM_FILE);
+            BufferedWriter bufferedWriter=new BufferedWriter(fileWriter);
+            String line=null;
+            for (Map.Entry<FuramaFacility,Integer> entry: facilityList.entrySet()){
+                if (entry.getKey() instanceof Room){
                     Room room=(Room) entry.getKey();
                     line=room.getIdFacility()+","+room.getNameService()+","+room.getAreaUsable()+","+
                             room.getCostsRental()+","+room.getMaxPeople()+","+room.getTypeRental()+","+
@@ -430,13 +454,15 @@ public class FacilityServiceImpl implements FacilityService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
-    private static List<FuramaFacility> readFurama(String nameFile) {
+    public static List<FuramaFacility> readFurama(String nameFile) {
  //       Map<FuramaFacility, Integer> furamaList = new LinkedHashMap<>();
         List<FuramaFacility> furamaList1=new ArrayList<>();
+        List<FuramaFacility> furamaList2=new ArrayList<>();
+        List<FuramaFacility> furamaList3=new ArrayList<>();
         FileReader fileReader;
+        int choice=0;
         try {
             String line;
             String temp[];
@@ -446,20 +472,24 @@ public class FacilityServiceImpl implements FacilityService {
                 temp = line.split(",");
                 String id= String.valueOf(temp[0].charAt(2));
                 if (id.equals("V") ) {
+                    choice=1;
                     FuramaFacility vila = new Villa(temp[0], temp[1], Double.parseDouble(temp[2]), Double.parseDouble(temp[3]),
                             Integer.parseInt(temp[4]), temp[5], temp[6], Double.parseDouble(temp[7]), Integer.parseInt(temp[8]));
                     furamaList1.add(vila);
                 } else if (id.equals("H")) {
+                    choice=2;
                     FuramaFacility house = new House(temp[0], temp[1], Double.parseDouble(temp[2]),
                             Double.parseDouble(temp[3]), Integer.parseInt(temp[4]), temp[5], temp[6], Integer.parseInt(temp[7]));
-                    furamaList1.add(house);
+                    furamaList2.add(house);
                 } else if (id.equals("R")) {
+                    choice=3;
                     FuramaFacility room = new Room(temp[0], temp[1], Double.parseDouble(temp[2]),
                             Double.parseDouble(temp[3]), Integer.parseInt(temp[4]), temp[5], temp[6]);
-                    furamaList1.add(room);
+                    furamaList3.add(room);
                 }
             }
             bufferedReader.close();
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -467,8 +497,30 @@ public class FacilityServiceImpl implements FacilityService {
         } catch (NumberFormatException e) {
             System.out.println("số không dúng định dạng");
         }
-        return furamaList1;
-    }
+        if (choice==1){
+            return furamaList1;
+        }else if (choice==2){
+            return furamaList2;
+        }else  {
+            return furamaList3;
+        }
 
+    }
+    public static Map<FuramaFacility,Integer> setListFurama(){
+        Map<FuramaFacility,Integer> list = new LinkedHashMap<>();
+        vilaList=readFurama(VILA_FILE);
+        houseList=readFurama(HOME_FILE);
+        roomList=readFurama(ROOM_FILE);
+        for (FuramaFacility vila:vilaList){
+            list.put(vila,0);
+        }
+        for (FuramaFacility house:houseList){
+            list.put(house,0);
+        }
+        for (FuramaFacility room:roomList){
+            list.put(room,0);
+        }
+        return list;
+    }
 
 }

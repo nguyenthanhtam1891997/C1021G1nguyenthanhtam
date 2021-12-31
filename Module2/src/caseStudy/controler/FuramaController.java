@@ -1,6 +1,8 @@
 package caseStudy.controler;
 
-import caseStudy.service.Service;
+import caseStudy.service.booking_contract.IBooking;
+import caseStudy.service.booking_contract.impl.BookingServiceImpl;
+import caseStudy.service.person.Service;
 import caseStudy.service.facility.FacilityService;
 import caseStudy.service.facility.impl.FacilityServiceImpl;
 import caseStudy.service.person.customer.impl.CustomerServiceImpl;
@@ -158,6 +160,7 @@ public class FuramaController {
         }while (true);
     }
     public static void displayBooking(){
+        IBooking bookingService=new BookingServiceImpl();
         do {
             System.out.println("__Booking Menu__");
             System.out.println("1. Display list Booking");
@@ -174,6 +177,13 @@ public class FuramaController {
                 System.out.println("You enter not a number enter again");
             }
             switch (choice){
+                case 1:
+                    bookingService.displayBooking();
+                    break;
+                case 2:
+                    bookingService.addBooking();
+                    break;
+
                 case 4:
                     displayMaiMenu();
                     break;

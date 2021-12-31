@@ -18,7 +18,7 @@ public class CustomerServiceImpl implements CustomerService {
     private static final String PHONE_NUMBER="0[397][0379][0-9]{7}";
     private static final String EMAIL="^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$";
     private static final String ID_CITIZEN="20[0-9]{7}";
-    private static final String FILE_CUSTOMER="D:\\codegym\\C1021G1nguyenthanhtam\\C1021G1nguyenthanhtam\\Module2\\src\\caseStudy\\model\\customerFile.csv";
+    private static final String FILE_CUSTOMER="D:\\codegym\\C1021G1nguyenthanhtam\\C1021G1nguyenthanhtam\\Module2\\src\\caseStudy\\model\\data\\customerFile.csv";
     @Override
     public void display() {
         for (Customer customer:customerList){
@@ -40,7 +40,7 @@ public class CustomerServiceImpl implements CustomerService {
         System.out.println("Enter address");
         String addressService=input.nextLine();
         Customer customer=new Customer(id,name,dayOfBirth,idCitizen,phoneNumber,email,typeCustomer,addressService);
-        customerList=readCustomer();
+      //  customerList=readCustomer();
         customerList.add(customer);
         Collections.sort(customerList);
         writeFile();
@@ -237,7 +237,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     }
 
-    private  List<Customer> readCustomer(){
+    public  static   List<Customer> readCustomer(){
         List<Customer> CustomerList1=new ArrayList<Customer>();
         FileReader fileReader;
         try {
@@ -262,7 +262,7 @@ public class CustomerServiceImpl implements CustomerService {
         }
         return CustomerList1;
     }
-    private void writeFile(){
+    public static void writeFile(){
         try {
             FileWriter fileWriter=new FileWriter(FILE_CUSTOMER);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);

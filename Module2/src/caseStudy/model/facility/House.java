@@ -9,9 +9,8 @@ public class House extends FuramaFacility {
         this.numberFloors = numberFloors;
     }
 
-    public House(String idFacility,String nameService, double areaUsable, double costsRental, int maxPeople,
-                 String typeRental, String standardRoom, int numberFloors) {
-        super(idFacility,nameService, areaUsable, costsRental, maxPeople, typeRental);
+    public House(String idFacility, String nameService, double areaUsable, double costsRental, int maxPeople, String typeRental, String standardRoom, int numberFloors) {
+        super(idFacility, nameService, areaUsable, costsRental, maxPeople, typeRental);
         this.standardRoom = standardRoom;
         this.numberFloors = numberFloors;
     }
@@ -40,10 +39,7 @@ public class House extends FuramaFacility {
                 '}';
     }
 
-    @Override
-    public String maintenance() {
-        return null;
-    }
+
 
 
 }

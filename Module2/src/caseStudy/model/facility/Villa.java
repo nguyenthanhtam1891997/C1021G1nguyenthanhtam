@@ -56,10 +56,7 @@ public class Villa extends FuramaFacility {
                 '}';
     }
 
-    @Override
-    public String maintenance() {
-        return null;
-    }
+
 
 
 

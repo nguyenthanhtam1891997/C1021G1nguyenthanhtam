@@ -1,4 +1,4 @@
-package caseStudy.service;
+package caseStudy.service.person;
 
 public interface Service {
     public void display();

@@ -28,10 +28,7 @@ public class Room extends FuramaFacility {
                 '}';
     }
 
-    @Override
-    public String maintenance() {
-        return null;
-    }
+
 
 
 }

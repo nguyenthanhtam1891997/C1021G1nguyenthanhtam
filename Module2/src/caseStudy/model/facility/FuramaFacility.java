@@ -8,6 +8,7 @@ public abstract class FuramaFacility {
     private int maxPeople;
     private String typeRental;
 
+
     public FuramaFacility() {
     }
 
@@ -64,20 +65,22 @@ public abstract class FuramaFacility {
         return idFacility;
     }
 
+
+
     public void setIdFacility(String idFacility) {
         this.idFacility = idFacility;
     }
 
+
     @Override
     public String toString() {
-        return "FuramaFacility" +
-                "nameService='" + nameService + '\'' +
+        return "FuramaFacility{" +
+                "idFacility='" + idFacility + '\'' +
+                ", nameService='" + nameService + '\'' +
                 ", areaUsable=" + areaUsable +
                 ", costsRental=" + costsRental +
                 ", maxPeople=" + maxPeople +
-                ", typeRental='" + typeRental + '\''
-                ;
+                ", typeRental='" + typeRental + '\'' +
+                '}';
     }
-
-    public abstract String maintenance();
 }

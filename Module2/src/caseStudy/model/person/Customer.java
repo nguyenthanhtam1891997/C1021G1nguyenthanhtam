@@ -19,8 +19,7 @@ public class Customer extends Person implements Comparable<Customer> {
         this.addressService = addressService;
     }
 
-    public Customer(String s, String s1, String s2, String s3, String s4, String s5, String s6, String s7, double parseDouble, String s8) {
-    }
+
 
 
     public String getTypeCustomer() {

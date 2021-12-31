@@ -18,7 +18,7 @@ private static final String  DAY_OF_BIRTH= "[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}";
 private static final String PHONE_NUMBER="0[397][0379][0-9]{7}";
 private static final String EMAIL="^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$";
 private static final String ID_CITIZEN="20[0-9]{7}";
-private static final String FILE_EMPLOY="D:\\codegym\\C1021G1nguyenthanhtam\\C1021G1nguyenthanhtam\\Module2\\src\\caseStudy\\model\\employeeFile.csv";
+private static final String FILE_EMPLOY="D:\\codegym\\C1021G1nguyenthanhtam\\C1021G1nguyenthanhtam\\Module2\\src\\caseStudy\\model\\data\\employeeFile.csv";
     @Override
     public void display() {
         for (Employee employee:employeeList){
