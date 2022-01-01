@@ -33,13 +33,25 @@ public class House extends FuramaFacility {
 
     @Override
     public String toString() {
-        return "House{" +super.toString()+
-                "standardRoom='" + standardRoom + '\'' +
-                ", numberFloors=" + numberFloors +
-                '}';
+        return super.toString()+
+                "," + standardRoom  +
+                "," + numberFloors ;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj==null||!(obj instanceof Villa)){
+            return false;
+        }
+       Villa otherVila=(Villa) obj;
+        if (this.getIdFacility().equals(otherVila.getIdFacility())&& this.getNameService().equals(otherVila.getNameService())){
+            return true;
+        }
+        return false;
+    }
 
-
-
+    @Override
+    public int hashCode() {
+        return this.getIdFacility().hashCode();
+    }
 }

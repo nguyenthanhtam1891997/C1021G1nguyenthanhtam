@@ -3,7 +3,7 @@ package caseStudy.model.booking_contract;
 import caseStudy.model.facility.FuramaFacility;
 import caseStudy.model.person.Customer;
 
-public class Booking {
+public class Booking  {
     private int idBooking;
     private String dayStart;
     private String dayEnd;
@@ -71,4 +71,6 @@ public class Booking {
                 ", facility=" + facility +
                 '}';
     }
+
+
 }

@@ -49,15 +49,30 @@ public class Villa extends FuramaFacility {
 
     @Override
     public String toString() {
-        return "Villa{" +super.toString()+
-                "standardRoom='" + standardRoom + '\'' +
-                ", areaPool=" + areaPool +
-                ", numberFloors=" + numberFloors +
-                '}';
+        return super.toString()+
+                "," + standardRoom  +
+                "," + areaPool +
+                "," + numberFloors
+                ;
     }
 
 
+    @Override
+    public int hashCode() {
+        return this.getIdFacility().hashCode();
+    }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj==null||!(obj instanceof Villa)){
+            return false;
+        }
+        Villa otherVilla=(Villa) obj;
+        if (this.getIdFacility().equals(otherVilla.getIdFacility())&& this.getNameService().equals(otherVilla.getNameService())){
+            return true;
+        }
+        return false;
+    }
 
 
 

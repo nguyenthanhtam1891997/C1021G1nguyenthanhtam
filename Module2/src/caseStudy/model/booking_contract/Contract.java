@@ -4,12 +4,12 @@ import caseStudy.model.person.Customer;
 
 public class Contract {
     private String idContract;
-    private Booking booking;
+    private String booking;
     private double moneyDeposit;
     private double sumMoney;
-    private Customer customer;
+    private String customer;
 
-    public Contract(String idContract, Booking booking, double moneyDeposit, double sumMoney, Customer customer) {
+    public Contract(String idContract, String booking, double moneyDeposit, double sumMoney, String customer) {
         this.idContract = idContract;
         this.booking = booking;
         this.moneyDeposit = moneyDeposit;
@@ -25,11 +25,11 @@ public class Contract {
         this.idContract = idContract;
     }
 
-    public Booking getBooking() {
+    public String getBooking() {
         return booking;
     }
 
-    public void setBooking(Booking booking) {
+    public void setBooking(String booking) {
         this.booking = booking;
     }
 
@@ -49,11 +49,11 @@ public class Contract {
         this.sumMoney = sumMoney;
     }
 
-    public Customer getCustomer() {
+    public String getCustomer() {
         return customer;
     }
 
-    public void setCustomer(Customer customer) {
+    public void setCustomer(String customer) {
         this.customer = customer;
     }
 
@@ -61,10 +61,10 @@ public class Contract {
     public String toString() {
         return "Contract{" +
                 "idContract='" + idContract + '\'' +
-                ", booking=" + booking +
+                ", booking='" + booking + '\'' +
                 ", moneyDeposit=" + moneyDeposit +
                 ", sumMoney=" + sumMoney +
-                ", customer=" + customer +
+                ", customer='" + customer + '\'' +
                 '}';
     }
 }

@@ -1,7 +1,9 @@
 package caseStudy.controler;
 
 import caseStudy.service.booking_contract.IBooking;
+import caseStudy.service.booking_contract.IContract;
 import caseStudy.service.booking_contract.impl.BookingServiceImpl;
+import caseStudy.service.booking_contract.impl.ContractServiceImpl;
 import caseStudy.service.person.Service;
 import caseStudy.service.facility.FacilityService;
 import caseStudy.service.facility.impl.FacilityServiceImpl;
@@ -161,6 +163,7 @@ public class FuramaController {
     }
     public static void displayBooking(){
         IBooking bookingService=new BookingServiceImpl();
+        IContract contractService=new ContractServiceImpl();
         do {
             System.out.println("__Booking Menu__");
             System.out.println("1. Display list Booking");
@@ -183,8 +186,16 @@ public class FuramaController {
                 case 2:
                     bookingService.addBooking();
                     break;
-
+                case 3:
+                    contractService.addContract();
+                    break;
                 case 4:
+                    contractService.displayContract();
+                    break;
+                case 5:
+                    contractService.editContract();
+                    break;
+                    case 6:
                     displayMaiMenu();
                     break;
             }

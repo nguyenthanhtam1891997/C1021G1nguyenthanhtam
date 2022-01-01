@@ -1,10 +1,12 @@
 package caseStudy.service.facility.impl;
 
+import caseStudy.model.booking_contract.Booking;
 import caseStudy.model.facility.FuramaFacility;
 
 import caseStudy.model.facility.House;
 import caseStudy.model.facility.Room;
 import caseStudy.model.facility.Villa;
+import caseStudy.service.booking_contract.impl.BookingServiceImpl;
 import caseStudy.service.facility.FacilityService;
 
 import java.io.*;
@@ -14,6 +16,7 @@ import java.util.*;
 
 public class FacilityServiceImpl implements FacilityService {
     private static Map<FuramaFacility,Integer> facilityList = new LinkedHashMap<>();
+    private static Map<FuramaFacility,Integer> facilityListBooking = BookingServiceImpl.changeFacility();
     private static List<FuramaFacility> vilaList=new ArrayList<>();
     private static List<FuramaFacility> houseList=new ArrayList<>();
     private static List<FuramaFacility> roomList=new ArrayList<>();
@@ -27,6 +30,7 @@ public class FacilityServiceImpl implements FacilityService {
     public static final String ROOM_FILE ="D:\\codegym\\C1021G1nguyenthanhtam\\C1021G1nguyenthanhtam\\Module2\\src\\caseStudy\\model\\data\\roomFile.csv";
     public static final String HOME_FILE ="D:\\codegym\\C1021G1nguyenthanhtam\\C1021G1nguyenthanhtam\\Module2\\src\\caseStudy\\model\\data\\houseFile.csv";
     private String idFacility;
+
     static {
         vilaList=readFurama(VILA_FILE);
         houseList=readFurama(HOME_FILE);
@@ -106,8 +110,16 @@ public class FacilityServiceImpl implements FacilityService {
 
 
     @Override
-    public void displayError() {
+    public  void displayError() {
 
+        for (Map.Entry<FuramaFacility,Integer> entry: facilityListBooking.entrySet()){
+            if (entry.getValue()==5){
+                System.out.print(entry.getKey()+"\t");
+                System.out.println(entry.getValue());
+                System.out.println("đang bao trì ");
+
+            }
+        }
     }
 
     @Override
@@ -513,6 +525,7 @@ public class FacilityServiceImpl implements FacilityService {
         roomList=readFurama(ROOM_FILE);
         for (FuramaFacility vila:vilaList){
             list.put(vila,0);
+            System.out.println(vila);
         }
         for (FuramaFacility house:houseList){
             list.put(house,0);
